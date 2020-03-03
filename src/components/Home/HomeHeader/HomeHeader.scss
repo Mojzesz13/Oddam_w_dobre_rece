@@ -1,0 +1,23 @@
+.headerContainer {
+  height: 96.3rem;
+  width: 176rem;
+  background-color: gray;
+  display: flex;
+  .headerImg {
+    width: 88.5rem;
+    height: 96.3rem;
+    //background-image: url("../../Project_3_Oddam_w_dobre_rece/oddam_w_dobre_rece/src/assets/Home-Hero-Image.jpg");
+    //background-image: url("./src/assets/Home-Hero-Image.jpg");
+    //background-image: url("../oddam_w_dobre_rece/src/assets/Home-Hero-Image.jpg");
+    background-color: #61dafb;
+  }
+  .headerText {
+
+    .headerNavbar {
+      position: fixed;
+      .active{
+        border: 1px solid gray;
+      }
+    }
+  }
+}
