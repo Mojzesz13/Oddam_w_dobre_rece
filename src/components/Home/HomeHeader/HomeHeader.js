@@ -3,17 +3,14 @@ import {Link} from 'react-scroll';
 import './HomeHeader.scss'
 import HomeLogin from "./HomeLogin/HomeLogin";
 
-
 const HomeHeader = () => {
     return (
         <div className="headerContainer" id="main">
-            <div className="headerImg"></div>
-
+            <div className="headerImg">{/*empty*/}</div>
             <div className="headerText">
                 <div className="headerNavbar">
                     <HomeLogin/>
-
-                    <div className="headerLinks">
+                    <nav className="headerLinks">
                         <Link
                             activeClass="active"
                             to="main"
@@ -21,7 +18,6 @@ const HomeHeader = () => {
                             smooth={true}
                             duration={500}
                         >Start</Link>
-
                         <Link
                             activeClass="active"
                             to="instruction"
@@ -29,7 +25,6 @@ const HomeHeader = () => {
                             smooth={true}
                             duration={500}
                         >O co chodzi?</Link>
-
                         <Link
                             activeClass="active"
                             to="aboutUs"
@@ -37,7 +32,6 @@ const HomeHeader = () => {
                             smooth={true}
                             duration={500}
                         >O nas</Link>
-
                         <Link
                             activeClass="active"
                             to="target"
@@ -45,7 +39,6 @@ const HomeHeader = () => {
                             smooth={true}
                             duration={500}
                         >Fundacja i organizacje</Link>
-
                         <Link
                             activeClass="active"
                             to="contact"
@@ -53,13 +46,11 @@ const HomeHeader = () => {
                             smooth={true}
                             duration={500}
                         >Kontakt</Link>
-                    </div>
+                    </nav>
                 </div>
-
-                <div className="headerTextContent"></div>
+                <div className="headerTextContent">{/*empty*/}</div>
             </div>
         </div>
     );
 };
-
 export default HomeHeader;

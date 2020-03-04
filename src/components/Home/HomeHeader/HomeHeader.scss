@@ -1,23 +1,54 @@
+@import "../../../scss/settings/font";
+@import "../../../scss/settings/colors";
+
 .headerContainer {
   height: 96.3rem;
-  width: 176rem;
-  background-color: gray;
+  width: 190rem;
   display: flex;
+
   .headerImg {
     width: 88.5rem;
     height: 96.3rem;
-    //background-image: url("../../Project_3_Oddam_w_dobre_rece/oddam_w_dobre_rece/src/assets/Home-Hero-Image.jpg");
-    //background-image: url("./src/assets/Home-Hero-Image.jpg");
-    //background-image: url("../oddam_w_dobre_rece/src/assets/Home-Hero-Image.jpg");
-    background-color: #61dafb;
+    background-image: url('../../../assets/Home-Hero-Image.jpg');
+    background-position: 100%;
   }
+
   .headerText {
+    height: 96.3rem;
+    max-width: 87.5rem;
 
     .headerNavbar {
-      position: fixed;
-      .active{
-        border: 1px solid gray;
+      position: fixed;   // this i the option with cooperate with hoover
+      width: auto;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+
+      nav {
+        padding-right: 9.5rem;
+        padding-left: 21rem;
+        margin-top: 3.5rem;
+
+        a {
+          font-size: 1.8rem;
+          color: $dark-gray-color;
+          font-family: $font-base;
+          padding: .9rem 2rem;
+          margin-right: 1.5rem;
+        }
+
+        .active {
+          border: 1px solid $dark-gray-color;
+          padding: .8rem 1.9rem;
+        }
       }
+    }
+    .headerTextContent {
+      width: 67.4rem;
+      height: 35rem;
+      background-color: #b3d4fc;
+      margin-top: 34.2rem;
+      margin-left: 6.6rem;
     }
   }
 }
