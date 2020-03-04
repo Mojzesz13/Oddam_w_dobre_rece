@@ -1,0 +1,41 @@
+@import "../../../scss/settings/colors";
+@import "../../../scss/settings/font";
+
+.threeColumnsContainer {
+  width: 190rem;
+  height: 38.4rem;
+  background-image: url("../../../assets/3 Columns Background@2x.png");
+  display: flex;
+  justify-content: space-evenly;
+
+  div {
+    width: 33.4rem;
+    height: 25.2rem;
+    margin-top: 4.6rem;
+    text-align: center;
+    font-family: $font-base;
+
+    h2 {
+      font-size: 9rem;
+      font-weight: 300;
+      color: $second-color;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      letter-spacing: -0.36px;
+      font-size: 1.8rem;
+      color: $dark-gray-color;
+      margin-top: 2rem;
+    }
+
+    p {
+      letter-spacing: -0.32px;
+      font-family: $font-alt;
+      font-size: 1.6rem;
+      color: $dark-gray-color;
+      padding-top: 2.8rem;
+      font-weight: 300;
+    }
+  }
+}
