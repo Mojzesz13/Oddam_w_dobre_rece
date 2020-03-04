@@ -1,4 +1,83 @@
- .homeInstruction {
-   height: 100vh;
-   background-color: coral;
- }
+@import "../../../scss/settings/font";
+@import "../../../scss/settings/colors";
+
+.homeInstruction {
+  width: 190rem;
+  height: 76rem;
+
+  .title {
+    padding-top: 5.5rem;
+    height: 14.4rem;
+    width: 190rem;
+    text-align: center;
+    letter-spacing: -0.76px;
+    font-size: 3.8rem;
+    color: $dark-gray-color;
+
+    img {
+      margin-top: 3.9rem;
+    }
+  }
+
+  .steps {
+    height: 32.5rem;
+    background-color: $first-color;
+    width: 190rem;
+    display: flex;
+    justify-content: center;
+
+    .stepsContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 105rem;
+      min-width: 105rem;
+
+      .content {
+        padding-top: 7.2rem;
+        width: 15rem;
+        height: 18rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h4 {
+          font-size: 1.8rem;
+          color: $dark-gray-color;
+        }
+
+        span {
+          color: #707070;
+        }
+
+        p {
+          color: $dark-gray-color;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .buttonDiv {
+    height: 23.5rem;
+    width: 190rem;
+    text-align: center;
+
+    button {
+      width: 31rem;
+      height: 12rem;
+      font-weight: 300;
+      border: 0.75px solid $dark-gray-color;
+      background-color: white;
+      margin-top: 3.5rem;
+    }
+
+    a {
+      font-size: 3.6rem;
+      text-decoration: none;
+      color: $dark-gray-color;
+      font-family: $font-base;
+    }
+  }
+}

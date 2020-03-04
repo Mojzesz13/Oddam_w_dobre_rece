@@ -1,4 +1,49 @@
-.aboutUsContainer{
-height: 100vh;
-background-color: cornflowerblue;
+@import "../../../scss/settings/font";
+@import "../../../scss/settings/colors";
+
+.aboutUsContainer {
+  width: 190rem;
+  height: 93.5rem;
+  display: flex;
+  flex-direction: row;
+
+  .aboutUsText {
+    width: 95.8rem;
+    height: 100%;
+    background-color: $first-color;
+    text-align: center;
+
+    .title {
+      letter-spacing: -0.76px;
+      font-size: 3.8rem;
+      color: $dark-gray-color;
+      margin-top: 18.6rem;
+      text-align: center;
+
+      img {
+        margin-top: 4rem;
+      }
+
+      p {
+        margin-top: 5.5rem;
+        width: 65.7rem;
+        letter-spacing: .6px;
+        font-size: 3rem;
+        padding-left: 15rem;
+        line-height: 5rem;
+      }
+    }
+
+    .signature {
+      margin-top: 4rem;
+      margin-left: 40rem;
+    }
+  }
+
+  .aboutUsImg {
+    width: 94.2rem;
+    height: 100%;
+    background-image: url("../../../assets/People.jpg");
+
+  }
 }
