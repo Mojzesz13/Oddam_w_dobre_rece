@@ -1,4 +1,52 @@
- .homeTargetContainer{
-   height: 100vh;
-   background-color: goldenrod;
- }
+@import "../../../scss/settings/font";
+@import "../../../scss/settings/colors";
+
+.homeTargetContainer {
+  height: 93.2rem;
+  max-width: 190rem;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    height: 11rem;
+    letter-spacing: -0.76px;
+    font-size: 3.8rem;
+    color: $dark-gray-color;
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      margin-top: 4rem;
+    }
+  }
+
+  .buttons {
+    width: 134.4rem;
+    height: 20rem;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: flex-end;
+
+      button {
+        width: 20.8rem;
+        height: 7.9rem;
+        border: 0.75px solid $dark-gray-color;
+        background-color: white;
+      }
+      a {
+        font-size: 2.4rem;
+        text-decoration: none;
+        color: $dark-gray-color;
+        font-family: $font-base;
+      }
+    }
+
+  .paginationDiv {
+    height: 55.3rem;
+    width: 134.4rem;
+    align-self: center;
+  }
+}

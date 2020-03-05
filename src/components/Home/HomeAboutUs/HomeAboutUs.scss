@@ -11,13 +11,14 @@
     width: 95.8rem;
     height: 100%;
     background-color: $first-color;
-    text-align: center;
 
     .title {
       letter-spacing: -0.76px;
       font-size: 3.8rem;
       color: $dark-gray-color;
       margin-top: 18.6rem;
+      display: flex;
+      flex-direction: column;
       text-align: center;
 
       img {
@@ -29,14 +30,15 @@
         width: 65.7rem;
         letter-spacing: .6px;
         font-size: 3rem;
-        padding-left: 15rem;
         line-height: 5rem;
+        align-self: center;
       }
-    }
 
-    .signature {
-      margin-top: 4rem;
-      margin-left: 40rem;
+      .signature {
+        align-self: flex-end;
+        margin-top: 4rem;
+        margin-right: 15rem;
+      }
     }
   }
 
@@ -44,6 +46,5 @@
     width: 94.2rem;
     height: 100%;
     background-image: url("../../../assets/People.jpg");
-
   }
 }
