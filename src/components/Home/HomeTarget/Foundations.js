@@ -8,13 +8,13 @@ const Foundations = () => {
     return (
         <div className="containerFoundations">
             {fundations.map(foundation => (
-                <div className="allFoundations">
+                <div key={foundation._id}  className="allFoundations">
                     <div className="foundation">
                         <div className="descriptions">
                             <h1>{foundation.name}</h1>
                             <p>{foundation.mission}</p>
                         </div>
-                        <div className="neededItems">{foundation.items}}</div>
+                        <div className="neededItems">{foundation.items}</div>
                     </div>
                 </div>
             ))}

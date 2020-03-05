@@ -27,13 +27,37 @@
     align-content: space-around;
     margin-top: 3.2rem;
 
-
-    .foundation{
+    .foundation {
       width: 100%;
       height: 8.1rem;
       margin-top: 3.4rem;
       border-bottom: 1px solid $dark-gray-color;
+      display: flex;
+      justify-content: space-between;
 
+      .descriptions {
+
+        h1 {
+          font-weight: 300;
+          font-size: 2.6rem;
+          font-family: $font-alt;
+          color: $dark-gray-color;
+        }
+
+        p{
+          font-weight: 300;
+          font-size: 1.8rem;
+          font-family: $font-alt;
+          color: $dark-gray-color;
+        }
+      }
+
+      .neededItems {
+        font-weight: 300;
+        font-size: 1.8rem;
+        font-family: $font-alt;
+        color: $dark-gray-color;
+      }
     }
   }
 }
