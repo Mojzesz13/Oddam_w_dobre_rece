@@ -6,7 +6,7 @@ import {NavLink, HashRouter, Switch, Route} from "react-router-dom";
 import Foundations from "./Foundations"
 import Organizations from "./Organizations";
 import Local from "./Local";
-import Pagination from "./Pagination";
+import Pagination from "./Pagination/Pagination";
 
 const HomeTarget = () => {
     return (
@@ -22,14 +22,17 @@ const HomeTarget = () => {
                     <button><NavLink to="/local">Lokalnym zbiórkom</NavLink></button>
                 </div>
                 <div className="paginationDiv">
-                <Switch>
-                        <Route exact path="/" component={Foundations}/>
-                        <Route path="/organizations" component={Organizations}/>
-                        <Route path="/local" component={Local}/>
-                </Switch>
-                    {/*<Pagination/>*/}
+                {/*<Switch>*/}
+                {/*        <Route exact path="/" component={Foundations}/>*/}
+                {/*        <Route path="/organizations" component={Organizations}/>*/}
+                {/*        <Route path="/local" component={Local}/>*/}
+                {/*</Switch>*/}
+                <Foundations/>
+
                 </div>
+                <Pagination/>
             </div>
+
         </HashRouter>
     );
 };

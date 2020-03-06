@@ -1,14 +1,28 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Foundations.scss';
 import  { getFundations } from "./fakeFoundationsApi"
+import Pagination from "./Pagination/Pagination";
+import { paginate } from "./Pagination/paginate";
 
 const Foundations = () => {
-    const[fundations, setFundations] = useState(getFundations);
+    const[allFoundations, setAllFundations] = useState(getFundations);
+    const[pageSize, setPageSize] = useState(3);
+    const[currentPage, setCurrentPage] = useState(1);
+
+    const handlePageChange = page => {
+        setCurrentPage(page);
+    };
+
+    const { length: count } = allFoundations;
+
+    const foundations = paginate(allFoundations, currentPage, pageSize );
 
     return (
+        <>
         <div className="containerFoundations">
-            {fundations.map(foundation => (
-                <div key={foundation._id}  className="allFoundations">
+
+            {foundations.map(foundation => (
+                <div key={foundation._id} className="allFoundations">
                     <div className="foundation">
                         <div className="descriptions">
                             <h1>{foundation.name}</h1>
@@ -18,7 +32,16 @@ const Foundations = () => {
                     </div>
                 </div>
             ))}
+
+            <Pagination itemsCount={count}
+                        pageSize={pageSize}
+                        currentPage={currentPage}
+                        onPageChange={handlePageChange}
+            />
+            {/*tutaj moze bedzie trzeba rozproszyc  itemCount wczesniej*/}
         </div>
+
+    </>
     );
 };
 
