@@ -1,0 +1,70 @@
+@import "../../../../scss/settings/font";
+@import "../../../../scss/settings/colors";
+
+.containerEntities {
+  width: 134.4rem;
+  height: 55.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5.5rem;
+
+  .introduce {
+    width: 64rem;
+    height: 9.4rem;
+    font-size: 2.2rem;
+    text-align: center;
+    color: $dark-gray-color;
+    line-height: 3rem;
+  }
+
+  .allEntities {
+    width: 100%;
+    margin-top: 3.5rem;
+    margin-bottom: 5.3rem;
+
+    div:nth-child(2) {
+      border-bottom: 1px solid $dark-gray-color;
+      border-top: 1px solid $dark-gray-color;
+    }
+
+    .mainEntities {
+      display: flex;
+      flex-direction: column;
+      padding-top: 3.1rem;
+
+      .entities {
+        height: 8.1rem;
+        display: flex;
+        justify-content: space-between;
+
+        .descriptions {
+
+          h1 {
+            font-weight: 300;
+            font-size: 2.6rem;
+            font-family: $font-alt;
+            color: $dark-gray-color;
+          }
+
+          p {
+            font-weight: 300;
+            font-size: 1.8rem;
+            font-family: $font-alt;
+            color: $dark-gray-color;
+            margin-top: .6rem;
+          }
+        }
+
+        .neededItems {
+          font-weight: 300;
+          font-size: 1.8rem;
+          font-family: $font-alt;
+          color: $dark-gray-color;
+          margin-right: 2rem;
+          border: none;
+        }
+      }
+    }
+  }
+}

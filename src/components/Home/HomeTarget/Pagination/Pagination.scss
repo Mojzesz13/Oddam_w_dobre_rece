@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 5rem;
+  width: 15.5rem;
+
+  .page-item {
+    width: 4rem;
+    height: 5rem;
+    position: relative;
+    box-sizing: border-box;
+
+    .page-link {
+      position: absolute;
+      top: 30%;
+      left: 37%;
+      font-size: 1.8rem;
+      border: none;
+    }
+  }
+
+  :hover {
+    border: 1px solid #707070;
+  }
+}
