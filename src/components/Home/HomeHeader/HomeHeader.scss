@@ -22,7 +22,7 @@
       display: flex;
       align-items: flex-end;
       flex-direction: column;
-
+      box-sizing: border-box;
 
       nav {
         padding-left: 10rem;
@@ -36,12 +36,13 @@
           margin-right: 1.5rem;
         }
 
-        .active {
+        :hover {
           border: 1px solid $dark-gray-color;
           padding: .8rem 1.9rem;
         }
       }
     }
+
     .textContent {
       width: 67.4rem;
       height: 35rem;
@@ -50,7 +51,6 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-
 
       h1 {
         font-size: 3.8rem;
@@ -63,18 +63,18 @@
         margin-top: 2.5rem;
       }
 
-      .titleButtons{
+      .titleButtons {
         margin-top: 9.6rem;
         display: flex;
         justify-content: space-between;
 
-         button {
-           width: 31rem;
-           height: 12rem;
-           font-weight: 300;
-           border: 0.75px solid $dark-gray-color;
-           background-color: white;
-         }
+        button {
+          width: 31rem;
+          height: 12rem;
+          font-weight: 300;
+          border: 0.75px solid $dark-gray-color;
+          background-color: white;
+        }
 
         a {
           font-size: 3.6rem;
