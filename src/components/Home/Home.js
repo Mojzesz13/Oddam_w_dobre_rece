@@ -17,7 +17,6 @@ import HomeFooter from "./HomeContact/HomeFooter/HomeFooter";
               <HomeAboutUs/>
               <HomeTarget/>
               <HomeContact/>
-              <HomeFooter/>
             </div>
         );
     };
