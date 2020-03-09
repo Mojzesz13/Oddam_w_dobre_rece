@@ -18,6 +18,14 @@
     img {
       margin-top: 3.1rem;
     }
+
+  }
+  .successInfo{
+    font-size: 1.4rem;
+    color: green;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-right: 22rem;
   }
 
   .contactForm {
@@ -32,7 +40,8 @@
     .personalDate {
       display: flex;
     }
-    .inputsHolder{
+
+    .inputsHolder {
       display: flex;
       flex-direction: column;
       max-width: 25.6rem;
@@ -43,13 +52,12 @@
 
       input {
         border: none;
-        border-bottom: 1px solid $light-gray-color;
         height: 2.4rem;
         font-size: 1.8rem;
         margin-top: 1.2rem;
       }
-
     }
+
     .textAreaHolder {
       display: flex;
       flex-direction: column;
@@ -65,6 +73,7 @@
         margin-bottom: 4.3rem;
         font-size: 1.8rem;
       }
+
       button {
         width: 15rem;
         height: 5rem;
@@ -76,6 +85,12 @@
         font-size: 1.8rem;
       }
     }
+
+      span {
+        font-size: 1.4rem;
+        color: red;
+        margin-top: 0.5rem;
+      }
   }
 }
 

@@ -6,7 +6,6 @@ import HomeInstruction from "./HomeInstruction/HomeInstruction";
 import HomeAboutUs from "./HomeAboutUs/HomeAboutUs";
 import HomeTarget from "./HomeTarget/HomeTarget";
 import HomeContact from "./HomeContact/HomeContact";
-import HomeFooter from "./HomeContact/HomeFooter/HomeFooter";
 
     const Home = () => {
         return (
