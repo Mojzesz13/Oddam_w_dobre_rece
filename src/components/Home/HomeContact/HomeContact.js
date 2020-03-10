@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './HomeContact.scss';
 import titleImg from "../../../assets/Decoration.svg";
 import HomeFooter from "./HomeFooter/HomeFooter";
 
 const HomeContact = () => {
-    const[name, setName] = useState("");
-    const[email, setEmail] = useState("");
-    const[message, setMessage] = useState("");
-    const[errorName, setErrorName] = useState("");
-    const[errorEmail, setErrorEmail] = useState("");
-    const[errorMessage, setErrorMessage] = useState("");
-    const[success, setSuccess] = useState(false);
-    const[color, setColor] = useState("#707070");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [errorName, setErrorName] = useState("");
+    const [errorEmail, setErrorEmail] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [color, setColor] = useState("#707070");
 
     const emailRequirements = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let borderStyle = {borderBottom: `1px solid ${color}`};
@@ -20,18 +20,18 @@ const HomeContact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (name.length < 2 || name.includes(" ")=== true){
+        if (name.length < 2 || name.includes(" ") === true) {
             setErrorName("Podane imię jest nieprawidłowe");
             setColor("red");
         }
-        if (!emailRequirements.test(email)){
+        if (!emailRequirements.test(email)) {
             setErrorEmail("Podany email jest nieprawidłowy");
             setColor("red");
         }
-        if (message.length < 120){
-            setErrorMessage("Wiadomość musi mieć co najmniej 120 znaków");
-            setColor("red");
-        }
+        // if (message.length < 120) {
+        //     setErrorMessage("Wiadomość musi mieć co najmniej 120 znaków");
+        //     setColor("red");
+        // }
 
         const user = {
             name,
@@ -50,21 +50,22 @@ const HomeContact = () => {
                 if (response.ok) {
                     return response.json();
                 } else {
-                   throw new Error("Błąd 400")
-               }
+                    throw new Error("Błąd 400")
+                }
             })
             .then(user => {
                 console.log(user);
-                setSuccess (true)
+                setSuccess(true)
+
             })
             .catch(err => {
                 console.error("Wystąpił bład " + err.massage)
             });
     };
 
-    let  successInfo;
-    if(success === true ){
-        successInfo =  <span className="successInfo">Wiadomość została wysłana! Wkródce się skontaktujemy</span>;
+    let successInfo;
+    if (success === true) {
+        successInfo = <span className="successInfo">Wiadomość została wysłana! Wkródce się skontaktujemy</span>;
     } else {
         successInfo = null;
     }
@@ -77,8 +78,7 @@ const HomeContact = () => {
             </div>
             {successInfo}
             <form className="contactForm"
-                onSubmit={handleSubmit}
-            >
+                  onSubmit={handleSubmit}>
                 <div className="personalDate">
                     <div className="inputsHolder">
                         <lable>Wpisz swoje imię</lable>
@@ -113,7 +113,7 @@ const HomeContact = () => {
                         placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate non velit a hendrerit. Phasellus dictum mauris sit amet orci porta sollicitudin."
                         onChange={(e) => setMessage(e.target.value)}
                     >
-                </textarea>
+                    </textarea>
                     <span>{errorMessage}</span>
                     <button>Wyślij</button>
                 </div>
@@ -122,4 +122,5 @@ const HomeContact = () => {
         </div>
     );
 };
+
 export default HomeContact;

@@ -13,7 +13,7 @@ const HomeTarget = () => {
         <div className="homeTargetContainer" id="target">
             <div className="title">
                 <h1>Komu pomagamy?</h1>
-                <img src={titleImg} alt="decoration-bar"/>
+                <img src={titleImg} alt="decorationBar"/>
             </div>
             <ul className="buttons">
                 <li onClick={() => setView(<Foundations/>)}>Fundacjom</li>
