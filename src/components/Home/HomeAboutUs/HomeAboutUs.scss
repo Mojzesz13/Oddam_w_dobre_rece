@@ -10,12 +10,12 @@
   .aboutUsText {
     width: 95.8rem;
     height: 100%;
-    background-color: $first-color;
+    background-color: $backgroundColor;
 
     .title {
       letter-spacing: -0.76px;
       font-size: 3.8rem;
-      color: $dark-gray-color;
+      color: $fontColor;
       margin-top: 18.6rem;
       display: flex;
       flex-direction: column;

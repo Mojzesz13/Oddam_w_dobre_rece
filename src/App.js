@@ -2,7 +2,7 @@ import React from 'react';
 import './main.scss';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 import Home from "./components/Home/Home";
-// import Login from "./components/Login/Login";
+import Login from "./components/Login/Login";
 
 
     function App() {
@@ -10,7 +10,7 @@ import Home from "./components/Home/Home";
             <HashRouter>
                 <>
                     <Switch>
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" component={Login} />
                     </Switch>
                 </>
             </HashRouter>

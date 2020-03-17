@@ -9,7 +9,7 @@ const HomeAboutUs = () => {
             <div className="aboutUsText">
                 <div className="title">
                     <h1> O nas </h1>
-                    <img src={titleImg} alt="decoration-bar"/>
+                    <img src={titleImg} alt="decorationBar"/>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque quis lectus vitae aliquet. Sed purus ante, convallis gravida felis eget, tincidunt aliquam odio. Morbi.</p>
                     <img className="signature" src={signature} alt="signatureText"/>
                 </div>

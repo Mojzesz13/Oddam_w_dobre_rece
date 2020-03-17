@@ -12,7 +12,7 @@ const HomeInstruction = () => {
         <div className="homeInstruction" id="instruction">
             <div className="title">
                 <h1> Wystarczą 4 proste kroki</h1>
-                <img src={titleImg} alt="decoration-bar"/>
+                <img src={titleImg} alt="decorationBar"/>
             </div>
             <div className="steps">
                 <div className="stepsContainer">

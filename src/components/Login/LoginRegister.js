@@ -1,21 +1,43 @@
 import React, {useState} from 'react';
 import fire from "../../config/Fire";
-import HomeLogin from "../Home/HomeHeader/HomeLogin/HomeLogin";
 import "./LoginRegister.scss"
-import Navigation from "../Home/Navigation/Navigation";
-import MenuIcon from "../../assets/menu.png"
+import titleImg from "../../assets/Decoration.svg";
 
-const LoginRegister = (props) => {
+const LoginRegister = () => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [passwordOne, setPasswordOne] = useState("");
+    const [passwordTwo, setPasswordTwo] = useState("");
     const [fireErrors, setFireErrors] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordOneError, setPasswordOneError] = useState("");
+    const [passwordTwoError, setPasswordTwoError] = useState("");
     const [loginBtn, setLoginBtn] = useState(true);
     const [register, setRegister] = useState("");
-    const [formTitle, setFormTitle] = useState("Login");
+    const [formTitle, setFormTitle] = useState("Zaloguj się");
+    const [color, setColor] = useState("#707070");
+
+    const emailRequirements = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let borderStyle = {borderBottom: `1px solid ${color}`};
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!emailRequirements.test(email)) {
+            setEmailError("Podany email jest nieprawidłowy");
+            setColor("red");
+        }
+        if (passwordOne < 6) {
+            setPasswordOneError("Hasło musi mieć co najmniej 6 znaków");
+            setColor("red");
+        }
+        if (passwordOne !== passwordTwo) {
+            setPasswordTwoError("Hasła musza być takie same");
+            setColor("red");
+        }
+    };
 
     const login = e => {
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(email, password)
+        fire.auth().signInWithEmailAndPassword(email, passwordOne)
             .catch((error) => {
                 setFireErrors(error.message)
             });
@@ -23,19 +45,31 @@ const LoginRegister = (props) => {
 
     const registration = e => {
         e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(email, password)
+        fire.auth().createUserWithEmailAndPassword(email, passwordOne)
             .catch((error) => {
                 setFireErrors(error.message)
             });
     };
 
     const getAction = action => {
-        if(action === "reg"){
+        if (action === "reg") {
             setFormTitle("Załóż konto");
             setLoginBtn(false);
-        }else {
-            setFormTitle("Login test");
+            setRegister(
+                <div className="inputHolder">
+                    <label>Powtórz hasło</label>
+                    <input type="password"
+                           value={passwordTwo}
+                           name="password"
+                           style={borderStyle}
+                           onChange={(e) => setPasswordTwo(e.target.value)}
+                    />
+                    <span>{passwordTwoError}</span>
+                </div>)
+        } else {
+            setFormTitle("Zaloguj Się");
             setLoginBtn(true);
+            setRegister(null);
         }
     };
 
@@ -43,35 +77,52 @@ const LoginRegister = (props) => {
         (<div className="loginError">{fireErrors}</div>) : null;
 
     let submitBtn = loginBtn ?
-        (<input className="loginBtn" type="submit" onClick={login} value="Enter1"/>) :
-        (<input className="loginBtn" type="submit" onClick={registration} value="Register1"/>);
+        (<input className="loginBtn" type="submit" onClick={login} value="Zaloguj Się"/>) :
+        (<input className="loginBtn" onClick={registration} value="Załóż konto"/>);
 
     let loginRegister = loginBtn ?
-        (<button className="registerBtn" onClick={() => getAction("reg")}>Załóż konto</button>):
-        (<button className="registerBtn" onClick={() => getAction("login")}>Login</button>);
+        (<button className="loginBtn" type="submit" onClick={() => getAction("reg")}>Załóż konto</button>) :
+        (<button className="loginBtn" onClick={() => getAction("login")}>Zaloguj Się</button>);
 
     return (
         <div className="loginContainer">
-            <div className="loginNavigation">
-                <HomeLogin/>
-                <Navigation/>
+            <div className="loginTitle">
+                <h1>{formTitle}</h1>
+                <img src={titleImg} alt="decorationBar"/>
             </div>
             {errorNotification}
             <div className="loginContent">
-                <form className={formTitle}>
-                    <input type="text"
-                           value={email}
-                           name="email"
-                           onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input type="password"
-                           value={password}
-                           name="password"
-                           onChange={(e) => setPassword(e.target.value)}
-                    />
-                    {loginRegister}
-                    {submitBtn}
+                <form className="formTitle"
+                      onSubmit={handleSubmit}>
+                    <div className="test">
+                        <div className="inputHolder">
+                            <label>Email</label>
+                            <input type="text"
+                                   value={email}
+                                   name="email"
+                                   style={borderStyle}
+                                   onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <span>{emailError}</span>
+                        </div>
+                        <div className="inputHolder">
+                            <label>Hasło</label>
+                            <input type="password"
+                                   value={passwordOne}
+                                   name="password"
+                                   style={borderStyle}
+                                   onChange={(e) => setPasswordOne(e.target.value)}
+                            />
+                            <span>{passwordOneError}</span>
+                        </div>
+                        {register}
+                    </div>
+                    <div className="buttonsContainer">
+                        {submitBtn}
+                        {loginRegister}
+                    </div>
                 </form>
+
             </div>
         </div>
     );

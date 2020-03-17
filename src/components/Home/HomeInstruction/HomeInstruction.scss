@@ -12,7 +12,7 @@
     text-align: center;
     letter-spacing: -0.76px;
     font-size: 3.8rem;
-    color: $dark-gray-color;
+    color: $fontColor;
 
     img {
       margin-top: 3.9rem;
@@ -21,7 +21,7 @@
 
   .steps {
     height: 32.5rem;
-    background-color: $first-color;
+    background-color: $backgroundColor;
     width: 190rem;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@
 
         h4 {
           font-size: 1.8rem;
-          color: $dark-gray-color;
+          color: $fontColor;
         }
 
         span {
@@ -52,7 +52,7 @@
         }
 
         p {
-          color: $dark-gray-color;
+          color: $fontColor;
           font-size: 1.6rem;
         }
       }
@@ -68,7 +68,7 @@
       width: 31rem;
       height: 12rem;
       font-weight: 300;
-      border: 0.75px solid $dark-gray-color;
+      border: 0.75px solid $fontColor;
       background-color: white;
       margin-top: 3.5rem;
     }
@@ -76,7 +76,7 @@
     a {
       font-size: 3.6rem;
       text-decoration: none;
-      color: $dark-gray-color;
+      color: $fontColor;
       font-family: $font-base;
     }
   }

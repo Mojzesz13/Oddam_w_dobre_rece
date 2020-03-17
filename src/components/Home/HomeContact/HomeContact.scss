@@ -67,7 +67,7 @@
 
       textarea {
         border: none;
-        border-bottom: 1px solid $light-gray-color;
+        border-bottom: 1px solid $secondFontColor;
         height: 9.7rem;
         margin-top: 1.2rem;
         margin-bottom: 4.3rem;
@@ -81,7 +81,7 @@
         font-weight: 300;
         border-radius: 0;
         background-color: white;
-        border: 0.75px solid $dark-gray-color;
+        border: 0.75px solid $fontColor;
         font-size: 1.8rem;
       }
     }

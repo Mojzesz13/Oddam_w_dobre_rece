@@ -14,7 +14,7 @@
     height: 9.4rem;
     font-size: 2.2rem;
     text-align: center;
-    color: $dark-gray-color;
+    color: $fontColor;
     line-height: 3rem;
   }
 
@@ -24,8 +24,8 @@
     margin-bottom: 5.3rem;
 
     div:nth-child(2) {
-      border-bottom: 1px solid $dark-gray-color;
-      border-top: 1px solid $dark-gray-color;
+      border-bottom: 1px solid $fontColor;
+      border-top: 1px solid $fontColor;
     }
 
     .mainEntities {
@@ -44,14 +44,14 @@
             font-weight: 300;
             font-size: 2.6rem;
             font-family: $font-alt;
-            color: $dark-gray-color;
+            color: $fontColor;
           }
 
           p {
             font-weight: 300;
             font-size: 1.8rem;
             font-family: $font-alt;
-            color: $dark-gray-color;
+            color: $fontColor;
             margin-top: .6rem;
           }
         }
@@ -60,7 +60,7 @@
           font-weight: 300;
           font-size: 1.8rem;
           font-family: $font-alt;
-          color: $dark-gray-color;
+          color: $fontColor;
           margin-right: 2rem;
           border: none;
         }

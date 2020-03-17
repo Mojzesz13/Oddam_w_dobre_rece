@@ -34,7 +34,7 @@
 
       h1 {
         font-size: 3.8rem;
-        color: $dark-gray-color;
+        color: $fontColor;
         font-family: $font-base;
         letter-spacing: -0.76px;
       }
@@ -52,14 +52,14 @@
           width: 31rem;
           height: 12rem;
           font-weight: 300;
-          border: 0.75px solid $dark-gray-color;
+          border: 0.75px solid $fontColor;
           background-color: white;
         }
 
         a {
           font-size: 3.6rem;
           text-decoration: none;
-          color: $dark-gray-color;
+          color: $fontColor;
           font-family: $font-base;
         }
       }

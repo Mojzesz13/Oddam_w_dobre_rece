@@ -3,7 +3,6 @@ import fire from "../../config/Fire";
 import Home from "../Home/Home";
 import LoginRegister from "./LoginRegister";
 
-
 const Login = () => {
     const[user, setUser] = useState(null);
 
@@ -24,7 +23,6 @@ const Login = () => {
     return (
         <div>
             {user ? (<Home/>) : (<LoginRegister/>)}
-
         </div>
     );
 };

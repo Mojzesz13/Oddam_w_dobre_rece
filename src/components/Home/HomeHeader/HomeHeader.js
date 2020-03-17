@@ -20,7 +20,7 @@ const HomeHeader = () => {
                         <h1>Zacznij pomagać!</h1>
                         <h1>Oddaj niechciane rzeczy w zaufane ręce</h1>
                     </div>
-                    <div className="titleImg"><img src={titleImg} alt="decoration-bar"/>
+                    <div className="titleImg"><img src={titleImg} alt="decorationBar"/>
                     </div>
                     <div className="titleButtons">
                         <button><NavLink to="/login">ODDAJ RZECZY</NavLink></button>
