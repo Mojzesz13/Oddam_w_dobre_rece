@@ -7,27 +7,24 @@ import LoginRegister from "./LoginRegister";
 const Login = () => {
     const[user, setUser] = useState(null);
 
-    // useEffect(() =>{
-    //     authListener();
-    // },[]);
-    //
-    // authListener() {
-    //
-    //     fire.auth().onAuthStateChanged((user) => {
-    //         if(user){
-    //             setUser({user});
-    //         }else{
-    //             setUser({user:null})
-    //         }
-    //     });
-    // };
+    useEffect(() =>{
+        authListener();
+    },[]);
 
-
-
+    function authListener() {
+        fire.auth().onAuthStateChanged((user) => {
+            if(user){
+                setUser(user);
+            }else{
+                setUser(null)
+            }
+        });
+    }
 
     return (
         <div>
             {user ? (<Home/>) : (<LoginRegister/>)}
+
         </div>
     );
 };

@@ -10,7 +10,7 @@ import Login from "./components/Login/Login";
             <HashRouter>
                 <>
                     <Switch>
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" component={Login} />
                     </Switch>
                 </>
             </HashRouter>

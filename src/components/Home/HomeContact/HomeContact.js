@@ -28,10 +28,10 @@ const HomeContact = () => {
             setErrorEmail("Podany email jest nieprawidłowy");
             setColor("red");
         }
-        // if (message.length < 120) {
-        //     setErrorMessage("Wiadomość musi mieć co najmniej 120 znaków");
-        //     setColor("red");
-        // }
+        if (message.length < 120) {
+            setErrorMessage("Wiadomość musi mieć co najmniej 120 znaków");
+            setColor("red");
+        }
 
         const user = {
             name,
@@ -74,14 +74,14 @@ const HomeContact = () => {
         <div className="homeContact" id="contact">
             <div className="title">
                 <h1>Skontaktuj się z nami</h1>
-                <img src={titleImg} alt="decoration-bar"/>
+                <img src={titleImg} alt="decorationBar"/>
             </div>
             {successInfo}
             <form className="contactForm"
                   onSubmit={handleSubmit}>
                 <div className="personalDate">
                     <div className="inputsHolder">
-                        <lable>Wpisz swoje imię</lable>
+                        <label>Wpisz swoje imię</label>
                         <input type="text"
                                name="name"
                                value={name}
@@ -93,7 +93,7 @@ const HomeContact = () => {
                         <span>{errorName}</span>
                     </div>
                     <div className="inputsHolder">
-                        <lable>Wpisz swój email</lable>
+                        <label>Wpisz swój email</label>
                         <input type="text"
                                name="email"
                                value={email}

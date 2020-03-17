@@ -1,27 +1,23 @@
 @import "../../scss/settings/font";
 @import "../../scss/settings/colors";
 
-
 .loginContainer {
-
   width: 190rem;
   display: flex;
   flex-direction: column;
   text-align: center;
 
-  .loginContent{
+  .loginContent {
     width: 38.4rem;
     height: 32.8rem;
     background-color: #FAD648;
   }
 
-
-    .test {
-      height: 96.3rem;
-      max-width: 87.5rem;
-      align-items: flex-end;
-      flex-direction: column;
-      box-sizing: border-box;
-}
-
+  .test {
+    height: 96.3rem;
+    max-width: 87.5rem;
+    align-items: flex-end;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
 }
