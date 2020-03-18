@@ -11,7 +11,7 @@ const LoginRegister = () => {
     const [emailError, setEmailError] = useState("");
     const [passwordOneError, setPasswordOneError] = useState("");
     const [passwordTwoError, setPasswordTwoError] = useState("");
-        const [loginBtn, setLoginBtn] = useState(true);
+    const [loginBtn, setLoginBtn] = useState(true);
     const [register, setRegister] = useState("");
     const [formTitle, setFormTitle] = useState("Zaloguj się");
     const [color, setColor] = useState("#707070");
@@ -25,7 +25,7 @@ const LoginRegister = () => {
             setEmailError("Podany email jest nieprawidłowy");
             setColor("red");
         }
-        if (passwordOne < 6) {
+        if (passwordOne.length < 6) {
             setPasswordOneError("Hasło musi mieć co najmniej 6 znaków");
             setColor("red");
         }
