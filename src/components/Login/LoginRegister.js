@@ -11,7 +11,7 @@ const LoginRegister = () => {
     const [emailError, setEmailError] = useState("");
     const [passwordOneError, setPasswordOneError] = useState("");
     const [passwordTwoError, setPasswordTwoError] = useState("");
-    const [loginBtn, setLoginBtn] = useState(true);
+        const [loginBtn, setLoginBtn] = useState(true);
     const [register, setRegister] = useState("");
     const [formTitle, setFormTitle] = useState("Zaloguj się");
     const [color, setColor] = useState("#707070");
@@ -29,8 +29,8 @@ const LoginRegister = () => {
             setPasswordOneError("Hasło musi mieć co najmniej 6 znaków");
             setColor("red");
         }
-        if (passwordOne !== passwordTwo) {
-            setPasswordTwoError("Hasła musza być takie same");
+        if (passwordTwo !==  passwordOne) {
+            setPasswordTwoError("Hasła muszą być takie same");
             setColor("red");
         }
     };
@@ -65,7 +65,7 @@ const LoginRegister = () => {
                            onChange={(e) => setPasswordTwo(e.target.value)}
                     />
                     <span>{passwordTwoError}</span>
-                </div>)
+                </div>);
         } else {
             setFormTitle("Zaloguj Się");
             setLoginBtn(true);
@@ -76,13 +76,21 @@ const LoginRegister = () => {
     let errorNotification = fireErrors ?
         (<div className="loginError">{fireErrors}</div>) : null;
 
+    // let submitBtn = loginBtn ?
+    //     (<button className="loginBtn" type="submit" onClick={login}>Zaloguj Się</button>) :
+    //     (<button className="loginBtn" type="submit" onClick={registration}>Załóż konto</button>);
+
     let submitBtn = loginBtn ?
         (<input className="loginBtn" type="submit" onClick={login} value="Zaloguj Się"/>) :
-        (<input className="loginBtn" onClick={registration} value="Załóż konto"/>);
+        (<input className="loginBtn" type="submit" onClick={registration} value="Załóż konto"/>);
 
     let loginRegister = loginBtn ?
-        (<button className="loginBtn" type="submit" onClick={() => getAction("reg")}>Załóż konto</button>) :
+        (<button className="loginBtn" onClick={() => getAction("reg")}>Załóż konto</button>) :
         (<button className="loginBtn" onClick={() => getAction("login")}>Zaloguj Się</button>);
+
+    // let loginRegister = loginBtn ?
+    //     (<input className="loginBtn" onClick={() => getAction("reg")} value="Załóż konto"/>) :
+    //     (<input className="loginBtn" onClick={() => getAction("login")} value="Zaloguj Się"/>);
 
     return (
         <div className="loginContainer">
@@ -91,39 +99,36 @@ const LoginRegister = () => {
                 <img src={titleImg} alt="decorationBar"/>
             </div>
             {errorNotification}
-            <div className="loginContent">
-                <form className="formTitle"
-                      onSubmit={handleSubmit}>
-                    <div className="test">
-                        <div className="inputHolder">
-                            <label>Email</label>
-                            <input type="text"
-                                   value={email}
-                                   name="email"
-                                   style={borderStyle}
-                                   onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <span>{emailError}</span>
-                        </div>
-                        <div className="inputHolder">
-                            <label>Hasło</label>
-                            <input type="password"
-                                   value={passwordOne}
-                                   name="password"
-                                   style={borderStyle}
-                                   onChange={(e) => setPasswordOne(e.target.value)}
-                            />
-                            <span>{passwordOneError}</span>
-                        </div>
-                        {register}
+            <form className="formTitle"
+                  onSubmit={handleSubmit}>
+                <div className="inputsContainer">
+                    <div className="inputHolder">
+                        <label>Email</label>
+                        <input type="text"
+                               value={email}
+                               name="email"
+                               style={borderStyle}
+                               onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <span>{emailError}</span>
                     </div>
-                    <div className="buttonsContainer">
-                        {submitBtn}
-                        {loginRegister}
+                    <div className="inputHolder">
+                        <label>Hasło</label>
+                        <input type="password"
+                               value={passwordOne}
+                               name="password"
+                               style={borderStyle}
+                               onChange={(e) => setPasswordOne(e.target.value)}
+                        />
+                        <span>{passwordOneError}</span>
                     </div>
-                </form>
-
-            </div>
+                    {register}
+                </div>
+                <div className="buttonsContainer">
+                    {submitBtn}
+                    {loginRegister}
+                </div>
+            </form>
         </div>
     );
 };
