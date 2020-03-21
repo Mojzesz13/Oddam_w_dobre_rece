@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-scroll';
 import "./Navigation.scss"
+import DrawerToggleButton from "./DrawerToggleButton";
 
 
-const Navigation = () => {
+const Navigation = (props) => {
     return (
-        <nav className="headerLinks">
+        <div className="NavContainer">
+            <nav className="headerLinks">
             <Link
                 activeClass="active"
                 to="/main"
@@ -42,7 +44,10 @@ const Navigation = () => {
                 duration={500}
             >Kontakt</Link>
         </nav>
+            <DrawerToggleButton click={props.drawerClickHandler}/>
+        </div>
     );
 };
 
 export default Navigation;
+

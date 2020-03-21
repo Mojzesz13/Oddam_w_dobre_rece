@@ -5,22 +5,24 @@
   height: 5rem;
   width: 15.5rem;
 
-  .page-item {
+  .pageItem {
     width: 4rem;
     height: 5rem;
     position: relative;
     box-sizing: border-box;
+    cursor: pointer;
 
-    .page-link {
+    .pageLink {
       position: absolute;
       top: 30%;
       left: 37%;
       font-size: 1.8rem;
       border: none;
-    }
 
-    :hover {
-      border: 1px solid #707070;
     }
+  }
+
+  :hover {
+    border: 1px solid #707070;
   }
 }

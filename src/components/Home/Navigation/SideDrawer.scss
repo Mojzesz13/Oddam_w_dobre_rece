@@ -1,0 +1,15 @@
+.sideDrawer {
+  height: 50%;
+  background-color: #b3d4fc;
+  position: fixed;
+  width: 68.5%;
+  text-align: center;
+  padding-left: 20%;
+  transform: translateX(-100%);
+  transition: transform .3s ease-out;
+  margin-top: 3.5%;
+}
+.open {
+  transform: translateX(-15%);
+  background-color: red;
+}

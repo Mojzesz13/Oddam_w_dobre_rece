@@ -33,10 +33,27 @@ const LoginRegister = () => {
             setPasswordTwoError("Hasła muszą być takie same");
             setColor("red");
         }
+
+        // const login = e => {
+        //
+        //     fire.auth().signInWithEmailAndPassword(email, passwordOne)
+        //         .catch((error) => {
+        //             setFireErrors(error.message)
+        //         });
+        // };
+        //
+        // const registration = e => {
+        //
+        //     fire.auth().createUserWithEmailAndPassword(email, passwordOne)
+        //         .catch((error) => {
+        //             setFireErrors(error.message)
+        //         });
+        // };
+
     };
 
     const login = e => {
-        e.preventDefault();
+
         fire.auth().signInWithEmailAndPassword(email, passwordOne)
             .catch((error) => {
                 setFireErrors(error.message)
@@ -44,7 +61,7 @@ const LoginRegister = () => {
     };
 
     const registration = e => {
-        e.preventDefault();
+
         fire.auth().createUserWithEmailAndPassword(email, passwordOne)
             .catch((error) => {
                 setFireErrors(error.message)
@@ -83,6 +100,7 @@ const LoginRegister = () => {
     let submitBtn = loginBtn ?
         (<input className="loginBtn" type="submit" onClick={login} value="Zaloguj Się"/>) :
         (<input className="loginBtn" type="submit" onClick={registration} value="Załóż konto"/>);
+    //
 
     let loginRegister = loginBtn ?
         (<button className="loginBtn" onClick={() => getAction("reg")}>Załóż konto</button>) :

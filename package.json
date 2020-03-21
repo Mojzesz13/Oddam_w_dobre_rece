@@ -17,6 +17,7 @@
     "react-scripts": "3.4.0",
     "react-scroll": "^1.7.16",
     "react-scrolling-nav": "^1.1.5",
+    "react-spring": "^8.0.27",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
