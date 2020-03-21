@@ -1,27 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import './HomeHeader.scss'
-import HomeLogin from "./HomeLogin/HomeLogin";
-import Navigation from "../Navigation/Navigation";
-import titleImg from "../../../assets/Decoration.svg"
-import SideDrawer from "../Navigation/SideDrawer";
-
+import titleImg from '../../../assets/Decoration.svg';
+import Navigation from '../Navigation/Navigation';
 
 const HomeHeader = () => {
-    const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
-
-    const drawerToggleClickHandler = () => {
-        setSideDrawerOpen(!sideDrawerOpen);
-    };
 
     return (
         <div className="headerContainer" id="main">
-            <div className="navbar">
-                <HomeLogin/>
-                <Navigation drawerClickHandler={drawerToggleClickHandler}/>
-                <SideDrawer show={sideDrawerOpen}/>
-            </div>
-
+            <Navigation/>
             <div className="textContent">
                 <div className="title">
                     <h1>Zacznij pomagać!</h1>

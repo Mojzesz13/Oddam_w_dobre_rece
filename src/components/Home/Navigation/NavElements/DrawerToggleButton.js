@@ -1,5 +1,5 @@
 import React from 'react';
-import "./DrawerToggleButton.scss"
+import './DrawerToggleButton.scss';
 
 const DrawerToggleButton = (props) => {
     return (
@@ -7,7 +7,6 @@ const DrawerToggleButton = (props) => {
             <div className="toggleButtonLine"/>
             <div className="toggleButtonLine"/>
             <div className="toggleButtonLine"/>
-
         </div>
     );
 };

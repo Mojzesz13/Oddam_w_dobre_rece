@@ -3,13 +3,15 @@
   background-color: #b3d4fc;
   position: fixed;
   width: 68.5%;
-  text-align: center;
-  padding-left: 20%;
-  transform: translateX(-100%);
+  display: flex;
+  justify-content: center;
+  transform: translateX(-200%);
   transition: transform .3s ease-out;
-  margin-top: 3.5%;
+  margin-top: 12%;
 }
+
 .open {
-  transform: translateX(-15%);
+  transform: translateX(0);
   background-color: red;
+  width: 100%;
 }

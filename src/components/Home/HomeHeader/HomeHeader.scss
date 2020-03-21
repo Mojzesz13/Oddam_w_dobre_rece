@@ -1,5 +1,5 @@
-@import "../../../scss/settings/font";
-@import "../../../scss/settings/colors";
+@import '../../../scss/settings/font';
+@import '../../../scss/settings/colors';
 
 .headerContainer {
   height: 96.3rem;
@@ -10,15 +10,6 @@
   background-repeat: no-repeat;
   flex-direction: column;
   box-sizing: border-box;
-
-  .navbar {
-    width: auto;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-right: 5%;
-  }
 
   .textContent {
     width: 67.4rem;
