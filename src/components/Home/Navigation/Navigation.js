@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import HomeLogin from './HomeLogin/HomeLogin';
+import HomeLogin from './NavElements/HomeLogin/HomeLogin';
 import NavList from './NavElements/NavList';
 import SideDrawer from './NavElements/SideDrawer';
 import './Navigation.scss'
@@ -10,6 +10,7 @@ const Navigation = () => {
     const drawerToggleClickHandler = () => {
         setSideDrawerOpen(!sideDrawerOpen);
     };
+
     return (
         <div className="navigationContainer">
             <HomeLogin drawerClickHandler={drawerToggleClickHandler}/>

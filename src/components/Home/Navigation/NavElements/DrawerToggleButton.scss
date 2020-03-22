@@ -1,4 +1,5 @@
-@import "./src/scss/settings/mixins";
+@import './src/scss/settings/mixins';
+@import '../../../../scss/settings/colors';
 
 .toggleButton {
   width: 4rem;
@@ -8,6 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-left: 5%;
+  margin-top: 2.5rem;
 
   .toggleButton:focus {
     outline: none;
@@ -15,8 +18,9 @@
 
   .toggleButtonLine {
     width: 100%;
-    height: 3px;
-    background-color: red;
+    height: 4px;
+    background-color: $fontColor;
+    border-radius: 20%;
   }
 }
 
@@ -25,3 +29,4 @@
     display: none;
   }
 }
+

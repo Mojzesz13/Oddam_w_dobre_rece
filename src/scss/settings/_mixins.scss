@@ -1,11 +1,11 @@
 @mixin mobile (){
-  @media(max-width: 481px){
+  @media(max-width: 500px){
     @content
   }
 }
 
 @mixin tablet (){
-  @media(max-width: 815px){
+  @media(min-width: 501px) and (max-width: 815px){
     @content
   }
 }
@@ -14,4 +14,12 @@
   @media(min-width: 816px){
     @content
   }
+}
+
+@mixin bordered($color, $width) {
+  border: $width solid $color;
+}
+
+@mixin button($color, $width) {
+  border: $width solid $color;
 }

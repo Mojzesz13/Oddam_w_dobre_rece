@@ -4,7 +4,6 @@ import './NavList.scss';
 
 const NavList = () => {
     return (
-        <div className="navContainer">
             <nav className="headerLinks">
                 <Link
                     activeClass="active"
@@ -42,7 +41,6 @@ const NavList = () => {
                     duration={500}
                 >Kontakt</Link>
             </nav>
-        </div>
     );
 };
 

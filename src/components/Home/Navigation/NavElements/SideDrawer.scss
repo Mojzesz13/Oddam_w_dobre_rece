@@ -1,17 +1,58 @@
+@import './src/scss/settings/mixins';
+@import './src/scss/settings/colors';
+@import '../../../../scss/settings/font';
+
 .sideDrawer {
-  height: 50%;
-  background-color: #b3d4fc;
-  position: fixed;
+  height: 60vh;
+  background-color: $third-color;
   width: 68.5%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin-top: .5rem;
   transform: translateX(-200%);
   transition: transform .3s ease-out;
-  margin-top: 12%;
+  border-top: 1px solid $secondFontColor;
+  border-bottom: 1px solid $secondFontColor;
+
+  .accountButtons {
+    margin-top: .5rem;
+    display: flex;
+    justify-content: space-around;
+
+
+    .loginHolder {
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: $secondFontColor;
+      padding: 1.1rem;
+      background-color: $backgroundColor;
+      border: 1px solid $secondFontColor;
+    }
+  }
+
+  nav {
+    margin: 1rem 0;
+
+    a {
+      width: 100vw;
+      text-align: center;
+
+      &:hover {
+        background-color: $backgroundColor;
+      }
+    }
+
+  }
 }
 
 .open {
   transform: translateX(0);
-  background-color: red;
   width: 100%;
+}
+
+@include desktop {
+  .sideDrawer {
+    display: none;
+  }
 }
