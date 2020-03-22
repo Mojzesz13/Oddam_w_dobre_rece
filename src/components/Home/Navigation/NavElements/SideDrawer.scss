@@ -4,7 +4,7 @@
 
 .sideDrawer {
   height: 60vh;
-  background-color: $third-color;
+  background-image: url("../../../../assets/3 Columns Background@2x.png");
   width: 68.5%;
   display: flex;
   justify-content: center;
@@ -28,6 +28,7 @@
       padding: 1.1rem;
       background-color: $backgroundColor;
       border: 1px solid $secondFontColor;
+      border-radius: 5%;
     }
   }
 

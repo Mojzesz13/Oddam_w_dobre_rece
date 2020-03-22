@@ -1,25 +1,34 @@
-@mixin mobile (){
-  @media(max-width: 500px){
+@mixin mobile() {
+  @media(max-width: 500px) {
     @content
   }
 }
 
-@mixin tablet (){
-  @media(min-width: 501px) and (max-width: 815px){
+@mixin tablet() {
+  @media(min-width: 501px) and (max-width: 1024px) {
     @content
   }
 }
 
-@mixin desktop (){
-  @media(min-width: 816px){
+@mixin desktop() {
+  @media(min-width: 1025px) {
     @content
   }
 }
 
-@mixin bordered($color, $width) {
-  border: $width solid $color;
-}
+@mixin button($height, $width, $fontSize, $fontColor, $fontWeight, $backgroundColor, $borderColor, $borderWidth, $borderRadius) {
+  button {
+    font-weight: $fontWeight;
+    background-color: $backgroundColor;
+    border: $borderWidth solid $borderColor;
+    border-radius: $borderRadius;
+    width: $width;
+    height: $height;
 
-@mixin button($color, $width) {
-  border: $width solid $color;
+    a {
+      font-size: $fontSize;
+      text-decoration: none;
+      color: $fontColor;
+    }
+  }
 }

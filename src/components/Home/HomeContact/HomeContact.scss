@@ -1,9 +1,11 @@
-@import "../../../scss/settings/font";
-@import "../../../scss/settings/colors";
+@import '../../../scss/settings/font';
+@import '../../../scss/settings/colors';
+@import './src/scss/settings/mixins';
 
 .homeContact {
   height: 102.6rem;
   max-width: 190rem;
+  width: 100vw;
   background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../../../assets/Background-Contact-Form.jpg");
   display: flex;
   flex-direction: column;
@@ -94,3 +96,17 @@
   }
 }
 
+@include mobile {
+  .homeContact {
+    .contactForm {
+
+
+
+
+      .inputsHolder {
+
+        input {
+         display: none;
+        }
+      }
+    }}}

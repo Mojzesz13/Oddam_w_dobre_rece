@@ -2,13 +2,15 @@
 @import "../../../scss/settings/colors";
 
 .aboutUsContainer {
-  width: 190rem;
+  max-width: 190rem;
+  width: 100vw;
   height: 93.5rem;
   display: flex;
   flex-direction: row;
 
   .aboutUsText {
-    width: 95.8rem;
+    max-width: 95.8rem;
+    width: 100vw;
     height: 100%;
     background-color: $backgroundColor;
 
@@ -27,7 +29,8 @@
 
       p {
         margin-top: 5.5rem;
-        width: 65.7rem;
+        max-width: 65.7rem;
+        width: 100vw;
         letter-spacing: .6px;
         font-size: 3rem;
         line-height: 5rem;

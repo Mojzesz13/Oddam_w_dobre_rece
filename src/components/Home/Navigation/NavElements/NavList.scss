@@ -2,11 +2,12 @@
 @import '../../../../scss/settings/colors';
 @import './src/scss/settings/mixins';
 
-nav {
+.headerLinks {
   padding-left: 10rem;
   display: flex;
   flex-direction: row;
   margin-top: 2.6rem;
+
 
   a {
     font-size: 1.8rem;

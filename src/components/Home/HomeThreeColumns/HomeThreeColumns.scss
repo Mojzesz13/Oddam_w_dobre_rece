@@ -2,7 +2,8 @@
 @import "../../../scss/settings/font";
 
 .threeColumnsContainer {
-  width: 190rem;
+  max-width: 190rem;
+  width: 100vw;
   height: 38.4rem;
   background-image: url("../../../assets/3 Columns Background@2x.png");
   display: flex;

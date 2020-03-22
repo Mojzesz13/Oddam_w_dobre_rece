@@ -1,9 +1,11 @@
-@import "../../../scss/settings/font";
-@import "../../../scss/settings/colors";
+@import '../../../scss/settings/font';
+@import '../../../scss/settings/colors';
+@import './src/scss/settings/mixins';
 
 .homeTargetContainer {
   height: 96.3rem;
   max-width: 190rem;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 
@@ -24,7 +26,8 @@
   }
 
   .buttons {
-    width: 134.4rem;
+    max-width: 134.4rem;
+    width: 100vw;
     height: 8rem;
     align-self: center;
     display: flex;
@@ -53,7 +56,21 @@
 
   .paginationDiv {
     height: 55.3rem;
-    width: 134.4rem;
+    max-width: 134.4rem;
+    width: 100vw;
     align-self: center;
   }
 }
+
+@include mobile {
+  .homeTargetContainer {
+
+
+
+    .buttons {
+      display: none;
+
+      li {
+        display: none;
+      }
+}}}
