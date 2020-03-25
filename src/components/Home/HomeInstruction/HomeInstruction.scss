@@ -1,20 +1,18 @@
-@import "../../../scss/settings/font";
-@import "../../../scss/settings/colors";
+@import '../../../scss/settings/font';
+@import '../../../scss/settings/colors';
+@import './src/scss/settings/mixins';
 
 .homeInstruction {
-  max-width: 190rem;
-  width: 100vw;
   height: 76rem;
+  width: 100%;
 
   .title {
-    padding-top: 5.5rem;
     height: 14.4rem;
-    max-width: 190rem;
-    width: 100vw;
+    padding-top: 5.5rem;
     text-align: center;
-    letter-spacing: -0.76px;
     font-size: 3.8rem;
     color: $fontColor;
+    letter-spacing: -0.76px;
 
     img {
       margin-top: 3.9rem;
@@ -23,27 +21,25 @@
 
   .steps {
     height: 32.5rem;
-    background-color: $backgroundColor;
-    width: 100vw;
     display: flex;
     justify-content: center;
+    background-color: $backgroundColor;
 
     .stepsContainer {
+      width: 100%;
+      max-width: 105rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      max-width: 105rem;
-      width: 100vw;
 
-
-      .content {
-        padding-top: 7.2rem;
-        width: 15rem;
+      .contentContainer {
         height: 18rem;
-        text-align: center;
+        width: 15rem;
+        padding-top: 7.2rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        text-align: center;
 
         h4 {
           font-size: 1.8rem;
@@ -55,8 +51,8 @@
         }
 
         p {
-          color: $fontColor;
           font-size: 1.6rem;
+          color: $fontColor;
         }
       }
     }
@@ -64,24 +60,123 @@
 
   .buttonDiv {
     height: 23.5rem;
-    max-width: 190rem;
-    width: 100vw;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include button(12rem, 31rem, 3.6rem, $fontColor, 300, white, $fontColor, 0.75px, 0);
+  }
+}
 
-    button {
-      width: 31rem;
-      height: 12rem;
-      font-weight: 300;
-      border: 0.75px solid $fontColor;
-      background-color: white;
-      margin-top: 3.5rem;
+@include tablet {
+  .homeInstruction {
+    height: 27rem;
+
+    .title {
+      height: 4rem;
+      padding-top: 3rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: $fontColor;
+
+      img {
+        display: none;
+      }
     }
 
-    a {
-      font-size: 3.6rem;
-      text-decoration: none;
+    .steps {
+      height: 10rem;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+
+      .stepsContainer {
+        justify-content: space-evenly;
+
+        .contentContainer {
+          height: 15rem;
+          padding-top: 2rem;
+          align-items: center;
+
+          img {
+            height: 8rem;
+            width: 8rem;
+          }
+
+          h4 {
+            margin-top: 1rem;
+            font-weight: 700;
+          }
+
+          span {
+            display: none;
+          }
+
+          p {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+
+    .buttonDiv {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .homeInstruction {
+    height: 20rem;
+
+    .title {
+      height: 4rem;
+      padding-top: 3rem;
+      font-size: 2rem;
+      font-weight: 700;
       color: $fontColor;
-      font-family: $font-base;
+
+      img {
+        display: none;
+      }
+    }
+
+    .steps {
+      height: 10rem;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+
+      .stepsContainer {
+
+        .contentContainer {
+          height: 10rem;
+          padding-top: 1rem;
+          align-items: center;
+
+          img {
+            height: 6rem;
+            width: 6rem;
+          }
+
+          h4 {
+            padding-top: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+          }
+
+          span {
+            display: none;
+          }
+
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .buttonDiv {
+      display: none;
     }
   }
 }

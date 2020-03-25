@@ -18,7 +18,7 @@ const Organizations  = () => {
     return (
         <div className="containerEntities">
             <div className="introduce">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate non velit a hendrerit. Phasellus dictum mauris sit amet orci porta sollicitudin.</p>
+                <p>Pomagamy również wszelkim organizacjom pozarządowym i charytatywnym, które nie są Fundacjami. Są to nasi Partnerzy, który zrobią dobry pożytek z rzeczy, które do nich trafią.</p>
             </div>
             <div className="allEntities ">
                 {organizations.map(organization  => (

@@ -1,26 +1,26 @@
 import React, {useState} from 'react';
 import './HomeTarget.scss';
-import titleImg from "../../../assets/Decoration.svg";
-import Foundations from "./entities/Foundations"
-import Organizations from "./entities/Organizations";
-import Local from "./entities/Local";
-import Pagination from "./Pagination/Pagination";
+import titleImg from '../../../assets/Decoration.svg';
+import Foundations from './entities/Foundations';
+import Organizations from './entities/Organizations';
+import Local from './entities/Local';
+import Pagination from './Pagination/Pagination';
 
 const HomeTarget = () => {
     const [view, setView] = useState(<Foundations/>);
 
     return (
         <div className="homeTargetContainer" id="target">
-            <div className="title">
+            <div className="titleContainer">
                 <h1>Komu pomagamy?</h1>
                 <img src={titleImg} alt="decorationBar"/>
             </div>
-            <ul className="buttons">
-                <li onClick={() => setView(<Foundations/>)}>Fundacjom</li>
-                <li onClick={() => setView(<Organizations/>)}>Organizacjom pozarządowym</li>
-                <li onClick={() => setView(<Local/>)}>Lokalnym zbiórkom</li>
-            </ul>
-            <div className="paginationDiv">{view}</div>
+            <div className="buttonsContainer">
+                <button onClick={() => setView(<Foundations/>)}>Fundacjom</button>
+                <button onClick={() => setView(<Organizations/>)}>Organizacjom pozarządowym</button>
+                <button onClick={() => setView(<Local/>)}>Lokalnym zbiórkom</button>
+            </div>
+            <div className="paginationContainer">{view}</div>
             <Pagination/>
         </div>
     );

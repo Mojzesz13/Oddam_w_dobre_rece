@@ -1,27 +1,28 @@
-@import "../../../../scss/settings/font";
-@import "../../../../scss/settings/colors";
+@import '../../../../scss/settings/font';
+@import '../../../../scss/settings/colors';
+@import './src/scss/settings/mixins';
 
 .containerEntities {
-  max-width: 134.4rem;
-  width: 100vw;
   height: 55.3rem;
+  width: 100%;
+  max-width: 134.4rem;
+  padding-top: 5.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5.5rem;
 
   .introduce {
-    max-width: 64rem;
-    width: 100vw;
     height: 9.4rem;
-    font-size: 2.2rem;
+    width: 100%;
+    max-width: 64rem;
     text-align: center;
-    color: $fontColor;
     line-height: 3rem;
+    font-size: 2.2rem;
+    color: $fontColor;
   }
 
   .allEntities {
-    width: 100%;
+    width: 90%;
     margin-top: 3.5rem;
     margin-bottom: 5.3rem;
 
@@ -31,9 +32,9 @@
     }
 
     .mainEntities {
+      padding-top: 3.1rem;
       display: flex;
       flex-direction: column;
-      padding-top: 3.1rem;
 
       .entities {
         height: 8.1rem;
@@ -43,30 +44,95 @@
         .descriptions {
 
           h1 {
-            font-weight: 300;
             font-size: 2.6rem;
+            font-weight: 300;
             font-family: $font-alt;
             color: $fontColor;
           }
 
           p {
-            font-weight: 300;
+            margin-top: .6rem;
             font-size: 1.8rem;
+            font-weight: 300;
             font-family: $font-alt;
             color: $fontColor;
-            margin-top: .6rem;
           }
         }
 
         .neededItems {
-          font-weight: 300;
+          margin-right: 2rem;
           font-size: 1.8rem;
+          font-weight: 300;
           font-family: $font-alt;
           color: $fontColor;
-          margin-right: 2rem;
           border: none;
         }
       }
     }
   }
 }
+
+@include tablet {
+  .containerEntities {
+    height: 6rem;
+    padding-top: 1rem;
+
+    .introduce {
+      width: 80%;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: $fontColor;
+    }
+
+    .allEntities {
+      width: 80%;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+
+      div:nth-child(2) {
+        border-bottom: 1px solid $fontColor;
+        border-top: 1px solid $fontColor;
+      }
+
+      .mainEntities {
+        padding-top: 1.5rem;
+
+        .entities {
+          height: 6rem;
+
+          .descriptions {
+
+            h1 {
+              font-size: 1.6rem;;
+            }
+
+            p {
+              font-size: 1.2rem;
+            }
+          }
+
+          .neededItems {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+  @include mobile {
+    .containerEntities {
+      height: 16rem;
+      padding-top: 7%;
+
+      .introduce {
+        width: 90%;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: $fontColor;
+      }
+
+      .allEntities {
+        display: none;
+      }
+    }
+  }

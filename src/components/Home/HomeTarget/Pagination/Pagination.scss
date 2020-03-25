@@ -1,21 +1,28 @@
+@import './src/scss/settings/font';
+@import './src/scss/settings/colors';
+@import './src/scss/settings/mixins';
+
 .pagination {
+  height: 5rem;
+  width: 15.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 5rem;
-  width: 15.5rem;
 
   .pageItem {
-    width: 4rem;
     height: 5rem;
+    width: 4rem;
     position: relative;
     box-sizing: border-box;
     cursor: pointer;
+    z-index: 0;
 
     .pageLink {
       position: absolute;
-      top: 30%;
-      left: 37%;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
       font-size: 1.8rem;
       border: none;
     }
@@ -23,5 +30,36 @@
     &:hover {
       border: 1px solid #707070;
     }
+  }
+}
+
+@include tablet {
+
+  .pagination {
+    height: 3rem;
+    width: 20rem;
+
+    .pageItem {
+      height: 3rem;
+      width: 3rem;
+      background-color: $decorationColor;
+      @include border(2px, $secondFontColor, 50%);
+
+      .pageLink {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      &:hover {
+        border: none;
+      }
+    }
+  }
+}
+
+
+@include mobile {
+  .pageItem {
+    display: none;
   }
 }

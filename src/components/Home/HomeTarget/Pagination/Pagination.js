@@ -8,7 +8,7 @@ const Pagination = props => {
     const pagesCount = Math.ceil(itemsCount / pageSize);
     if (pagesCount === 1) return null;
     const pages = _.range(0, pagesCount + 1);
-    const solutionForProblemWithExtraNumber = pages.shift();  // I used this because i didn't know how to sort problem in different way
+    const solutionForProblemWithExtraNumber = pages.shift();  // I used this because i didn't know how to sort problem in another way
 
     return (
         <nav>

@@ -4,73 +4,108 @@
 
 .homeTargetContainer {
   height: 96.3rem;
-  max-width: 190rem;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
-  .title {
+  .titleContainer {
     height: 11rem;
-    width: 33rem;
-    letter-spacing: -0.70px;
-    font-size: 3.8rem;
-    color: $fontColor;
+    width: 100%;
+    margin-top: 7rem;
     display: flex;
     flex-direction: column;
-    align-self: center;
-    margin-top: 7rem;
+    text-align: center;
+    font-size: 3.8rem;
+    color: $fontColor;
+    letter-spacing: -0.70px;
 
     img {
       margin-top: 4rem;
     }
   }
 
-  .buttons {
-    max-width: 134.4rem;
-    width: 100vw;
+  .buttonsContainer {
     height: 8rem;
-    align-self: center;
-    display: flex;
-    justify-content: space-evenly;
+    width: 100vw;
+    max-width: 134.4rem;
     margin-top: 5rem;
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly;
 
-    li {
-      width: 20.8rem;
-      height: 7.9rem;
-      font-size: 2.4rem;
-      text-decoration: none;
-      color: $fontColor;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      border: none;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
-
-    :hover {
-      border: 1px solid $fontColor;
-    }
+    @include buttonHomeTarget(7.9rem, 20.8rem, 2.4rem, $fontColor, 400, #FFF, $fontColor, 1px);
   }
 
-  .paginationDiv {
+  .paginationContainer {
     height: 55.3rem;
-    max-width: 134.4rem;
     width: 100vw;
+    max-width: 134.4rem;
     align-self: center;
+  }
+}
+
+@include tablet {
+  .homeTargetContainer {
+    height: 52rem;
+
+    .titleContainer {
+      height: 4rem;
+      margin: 2rem auto;
+      font-size: 3rem;
+      font-weight: 700;
+
+      img {
+        display: none;
+      }
+    }
+
+    .buttonsContainer {
+      margin-top: 1rem;
+
+      @include buttonHomeTarget(6rem, 12rem, 1.5rem, $fontColor, 700, $backgroundColor, $decorationColor, 2px);
+
+      button {
+        border: 2px solid $decorationColor;
+        border-radius: 5%;
+      }
+    }
+
+    .paginationContainer {
+      height: 35rem;
+    }
   }
 }
 
 @include mobile {
   .homeTargetContainer {
+    height: 25rem;
 
+    .titleContainer {
+      height: 3rem;
+      margin-top: 1rem;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: 700;
 
-
-    .buttons {
-      display: none;
-
-      li {
+      img {
         display: none;
       }
-}}}
+    }
+
+    .buttonsContainer {
+      margin-top: 2rem;
+
+      @include buttonHomeTarget(4rem, 9rem, 1rem, $fontColor, 700, $backgroundColor, $decorationColor, 2px);
+
+      button {
+        border: 2px solid $decorationColor;
+        border-radius: 5%;
+      }
+    }
+  }
+
+  .paginationContainer {
+    height: 20rem;
+  }
+}

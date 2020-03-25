@@ -18,7 +18,7 @@ const Locals = () => {
     return (
         <div className="containerEntities">
             <div className="introduce">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate non velit a hendrerit. Phasellus dictum mauris sit amet orci porta sollicitudin.</p>
+                <p>Wspieramy lokalne zbiórki organizowane przez indywidualne osoby, którym zależy na dobru społeczności, w której żyją. Sam też możesz zorganizować taką zbiórkę i pomóc tym, którzy są najbliżej.</p>
             </div>
             <div className="allEntities ">
                 {locals.map(local => (

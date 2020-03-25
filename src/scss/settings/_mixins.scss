@@ -2,33 +2,61 @@
   @media(max-width: 500px) {
     @content
   }
-}
+};
 
 @mixin tablet() {
   @media(min-width: 501px) and (max-width: 1024px) {
     @content
   }
-}
+};
 
 @mixin desktop() {
   @media(min-width: 1025px) {
     @content
   }
-}
+};
 
 @mixin button($height, $width, $fontSize, $fontColor, $fontWeight, $backgroundColor, $borderColor, $borderWidth, $borderRadius) {
   button {
-    font-weight: $fontWeight;
+    height: $height;
+    width: $width;
     background-color: $backgroundColor;
     border: $borderWidth solid $borderColor;
     border-radius: $borderRadius;
-    width: $width;
-    height: $height;
 
     a {
-      font-size: $fontSize;
       text-decoration: none;
+      font-size: $fontSize;
       color: $fontColor;
+      font-weight: $fontWeight;
+    }
+  }
+};
+
+@mixin buttonHomeTarget($height, $width, $fontSize, $fontColor, $fontWeight, $backgroundColor, $borderColor, $borderWidth){
+  button {
+    height: $height;
+    width: $width;
+    background-color: $backgroundColor;
+    border: none;
+    text-decoration: none;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $fontColor;
+
+    &:hover {
+      border: $borderWidth solid $borderColor;
     }
   }
 }
+
+@mixin border ($width, $color, $radius) {
+  border: $width solid $color;
+  border-radius: $radius;
+};
+
+@mixin boxShadow ($color, $verticalValue, $horizontalValue) {
+  -webkit-box-shadow: $verticalValue $horizontalValue 10px -5px $color;
+  -moz-box-shadow: $verticalValue $horizontalValue 10px -5px $color;
+  box-shadow: $verticalValue $horizontalValue 10px -5px $color;
+};
