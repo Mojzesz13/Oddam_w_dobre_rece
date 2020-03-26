@@ -5,7 +5,7 @@
 .threeColumnsContainer {
   height: 38.4rem;
   width: 100%;
-  background-image: url("../../../assets/3 Columns Background@2x.png");
+  background-image: url('../../../assets/3 Columns Background@2x.png');
   display: flex;
   justify-content: space-evenly;
 
@@ -36,8 +36,6 @@
       font-weight: 300;
       font-family: $font-alt;
       color: $fontColor;
-
-
     }
   }
 }

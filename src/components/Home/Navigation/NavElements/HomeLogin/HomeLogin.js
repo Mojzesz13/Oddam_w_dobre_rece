@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import "./HomeLogin.scss"
 // import fire from '../../../../../config/Fire';
 import DrawerToggleButton from '../../NavElements/DrawerToggleButton';
-import Logo from '../../../../../assets/clothes.png'
+import Logo from '../../../../../assets/clothes.png';
 
 
 const HomeLogin = (props) => {

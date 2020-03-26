@@ -89,11 +89,6 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
 
-      div:nth-child(2) {
-        border-bottom: 1px solid $fontColor;
-        border-top: 1px solid $fontColor;
-      }
-
       .mainEntities {
         padding-top: 1.5rem;
 
@@ -108,6 +103,7 @@
 
             p {
               font-size: 1.2rem;
+              max-width: 90%;
             }
           }
 

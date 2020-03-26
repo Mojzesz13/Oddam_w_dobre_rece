@@ -1,0 +1,157 @@
+@import '../../../../scss/settings/font';
+@import '../../../../scss/settings/colors';
+@import '../../../../scss/settings/mixins';
+
+.mobileContact {
+  height: 45rem;
+  width: 100%;
+
+  .Container {
+    height: 40%;
+    flex-direction: column;
+
+    .titleContainer {
+      height: 50%;
+      width: 80%;
+      margin-top: 2%;
+      align-self: center;
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+    }
+
+    .buttonsContainer {
+      height: 50%;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-evenly;
+      @include buttonHomeTarget(6rem, 12rem, 1.5rem, $fontColor, 700, $backgroundColor, $decorationColor, 2px);
+
+      button {
+        border: 2px solid $decorationColor;
+        border-radius: 5%;
+      }
+    }
+  }
+
+  .contactContainer {
+    height: 60%;
+
+    .contactTitle {
+      height: 50%;
+      margin-top: 2rem;
+
+      .imgHolder {
+        height: 6rem;
+        width: 6rem;
+        padding: 1.5rem;
+        margin-left: 7%;
+        background-color: $decorationColor;
+        border: 1px solid $secondFontColor;
+        border-radius: 50%;
+      }
+
+      .mini {
+        display: none;
+      }
+
+      .title {
+        margin-top: 1rem;
+        display: flex;
+      }
+
+      h2 {
+        margin-left: 7%;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      img {
+        margin-left: 2%;
+      }
+    }
+  }
+
+  .contactFaq {
+    height: 50%;
+    margin-top: 2rem;
+    margin-left: 7%;
+
+    ul > li {
+      margin-top: 1rem;
+      font-size: 2rem;
+
+      a {
+        text-decoration: none;
+        color: $fontColor;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .mobileContact {
+    display: none;
+  }
+}
+
+@include mobile {
+  .mobileContact {
+    height: 30rem;
+
+    .Container {
+
+      .titleContainer > h1 {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .buttonsContainer {
+        @include buttonHomeTarget(4rem, 9rem, 1rem, $fontColor, 700, $backgroundColor, $decorationColor, 2px);
+
+        button {
+          border: 2px solid $decorationColor;
+          border-radius: 5%;
+        }
+      }
+    }
+
+    .contactContainer {
+      .contactTitle {
+        .imgHolder {
+          height: 3rem;
+          width: 3rem;
+          padding: 1rem;
+        }
+
+        .mini {
+          display: block;
+        }
+
+        .max {
+          display: none;
+        }
+
+        .title {
+          flex-wrap: wrap;
+        }
+
+        img {
+          margin-left: 7%;
+        }
+      }
+    }
+
+    .contactFaq {
+
+      ul > li {
+        margin-top: .7rem;
+        font-size: 1.2rem;
+
+      }
+    }
+  }
+}
