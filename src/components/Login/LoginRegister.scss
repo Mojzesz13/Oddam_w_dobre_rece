@@ -1,15 +1,16 @@
-@import "../../scss/settings/font";
-@import "../../scss/settings/colors";
+@import '../../scss/settings/font';
+@import '../../scss/settings/colors';
 
 .loginContainer {
   width: 190rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .loginTitle {
-    font-size: 4rem;
     margin-top: 8%;
     text-align: center;
+    font-size: 4rem;
 
     img {
       margin-top: 3rem;
@@ -18,31 +19,31 @@
 
   .inputsContainer {
     width: 38.4rem;
-    background-color: $backgroundColor;
-    display: flex;
     margin: 6rem auto;
+    display: flex;
     flex-direction: column;
+    background-color: $backgroundColor;
 
     .inputHolder {
       height: 6.2rem;
+      margin-left: 10%;
       padding: 2rem 0;
       font-size: 1.6rem;
       font-family: $font-alt;
-      margin-left: 10%;
 
       input {
-        border: none;
         height: 2.4rem;
         width: 90%;
-        font-size: 1.8rem;
         margin-top: 1.2rem;
-        background-color: $backgroundColor
+        background-color: $backgroundColor;
+        border: none;
+        font-size: 1.8rem;
       }
 
       span {
+        margin-top: 0.5rem;
         font-size: 1.4rem;
         color: red;
-        margin-top: 0.5rem;
       }
     }
   }
@@ -54,17 +55,26 @@
     justify-content: space-between;
 
     .loginBtn {
-      width: 12rem;
       height: 5rem;
-      font-weight: 300;
-      font-size: 1.8rem;
+      width: 12rem;
+      box-sizing: border-box;
       background-color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: black;
       border: none;
-      text-align: center;
-    }
 
-    :hover {
-      border: 0.75px solid $fontColor;
+      &:hover {
+        border: 0.75px solid $fontColor;
+      }
     }
+  }
+
+  .loginError {
+    margin-top: 1rem;
+    color: red;
   }
 }

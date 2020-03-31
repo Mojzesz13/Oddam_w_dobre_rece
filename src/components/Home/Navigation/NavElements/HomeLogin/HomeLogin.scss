@@ -31,15 +31,9 @@
   }
 }
 
-@include mobile {
-  .headerLogin {
-    margin-top: 0.5rem;
-    justify-content: space-between;
-
-
-    .loginHolder {
-      display: none;
-    }
+@include desktop {
+  .imgHolder {
+    display: none;
   }
 }
 
@@ -54,8 +48,14 @@
   }
 }
 
-@include desktop {
-  .imgHolder {
-    display: none;
+@include mobile {
+  .headerLogin {
+    margin-top: 0.5rem;
+    justify-content: space-between;
+
+
+    .loginHolder {
+      display: none;
+    }
   }
 }

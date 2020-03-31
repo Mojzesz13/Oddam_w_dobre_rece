@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
-import Navigation from "../Home/Navigation/Navigation";
 import fire from '../../config/Fire';
+import Navigation from '../Home/Navigation/Navigation';
 import './LoginRegister.scss';
 import titleImg from '../../assets/Decoration.svg';
 
-
-const Login = () => {
+const Registration = () => {
     const [email, setEmail] = useState("");
     const [passwordOne, setPasswordOne] = useState("");
+    const [passwordTwo, setPasswordTwo] = useState("");
     const [fireErrors, setFireErrors] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordOneError, setPasswordOneError] = useState("");
+    const [passwordTwoError, setPasswordTwoError] = useState("");
     const [color, setColor] = useState("#707070");
 
     const emailRequirements = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -27,10 +28,14 @@ const Login = () => {
             setPasswordOneError("Hasło musi mieć co najmniej 6 znaków");
             setColor("red");
         }
+        if (passwordTwo !== passwordOne) {
+            setPasswordTwoError("Hasła muszą być takie same");
+            setColor("red");
+        }
     };
 
-    const login = e => {
-        fire.auth().signInWithEmailAndPassword(email, passwordOne)
+    const registration = e => {
+        fire.auth().createUserWithEmailAndPassword(email, passwordOne)
             .catch((error) => {
                 setFireErrors(error.message)
             });
@@ -44,7 +49,7 @@ const Login = () => {
             <Navigation/>
             <div className="loginContainer">
                 <div className="loginTitle">
-                    <h1>Zaloguj się</h1>
+                    <h1>Załóż konto</h1>
                     <img src={titleImg} alt="decorationBar"/>
                 </div>
                 {errorNotification}
@@ -71,10 +76,20 @@ const Login = () => {
                             />
                             <span>{passwordOneError}</span>
                         </div>
+                        <div className="inputHolder">
+                            <label>Powtórz hasło</label>
+                            <input type="password"
+                                   value={passwordTwo}
+                                   name="password"
+                                   style={borderStyle}
+                                   onChange={(e) => setPasswordTwo(e.target.value)}
+                            />
+                            <span>{passwordTwoError}</span>
+                        </div>
                     </div>
                     <div className="buttonsContainer">
-                        <NavLink className="loginBtn" to="/registration">Załóż konto</NavLink>
-                        <input className="loginBtn" type="submit" onClick={login} value="Zaloguj Się"/>
+                        <NavLink className="loginBtn" to="/login">Zaloguj</NavLink>
+                        <input className="loginBtn" type="submit" onClick={registration} value="Załóż konto"/>
                     </div>
                 </form>
             </div>
@@ -82,4 +97,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

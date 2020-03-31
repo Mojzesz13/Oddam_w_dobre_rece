@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './MobileContact.scss';
 import Logo from '../../../../assets/clothes.png';
 import MiniLogo from '../../../../assets/miniLogo.png';
-import PhoneIcon from "../../../../assets/phone.png";
-import MailIcon from "../../../../assets/mail.png";
-
+import PhoneIcon from '../../../../assets/phone.png';
+import MailIcon from '../../../../assets/mail.png';
 
 const MobileContact = () => {
     const [loginStatus, setLoginStatus] = useState("flex");

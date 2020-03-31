@@ -7,7 +7,7 @@ import HomeAboutUs from './HomeAboutUs/HomeAboutUs';
 import HomeTarget from './HomeTarget/HomeTarget';
 import HomeContact from './HomeContact/HomeContact';
 
-    const Home = () => {
+    const Home = (props) => {
         return (
             <div className="homeContainer">
               <HomeHeader/>
