@@ -1,0 +1,8 @@
+@import '../../scss/settings/font';
+@import '../../scss/settings/colors';
+@import './src/scss/settings/mixins';
+
+.giveAwayContainer {
+  max-width: 190rem;
+  margin: auto;
+}

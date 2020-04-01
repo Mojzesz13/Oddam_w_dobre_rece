@@ -70,52 +70,52 @@ const DesktopContact = () => {
 
     return (
         <div className="desktopContact" id="contact">
-                <div className="title">
-                    <h1>Skontaktuj się z nami</h1>
-                    <img src={titleImg} alt="decorationBar"/>
+            <div className="title">
+                <h1>Skontaktuj się z nami</h1>
+                <img src={titleImg} alt="decorationBar"/>
+            </div>
+            {successInfo}
+            <form className="contactForm"
+                  onSubmit={handleSubmit}>
+                <div className="personalDate">
+                    <div className="inputsHolder">
+                        <label>Wpisz swoje imię</label>
+                        <input type="text"
+                               name="name"
+                               value={name}
+                               required={true}
+                               style={borderStyle}
+                               placeholder="Krzysztof"
+                               onChange={(e) => setName(e.target.value)}
+                        />
+                        <span>{errorName}</span>
+                    </div>
+                    <div className="inputsHolder">
+                        <label>Wpisz swój email</label>
+                        <input type="text"
+                               name="email"
+                               value={email}
+                               required={true}
+                               style={borderStyle}
+                               placeholder="abc@xyz.pl"
+                               onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <span>{errorEmail}</span>
+                    </div>
                 </div>
-                {successInfo}
-                <form className="contactForm"
-                      onSubmit={handleSubmit}>
-                    <div className="personalDate">
-                        <div className="inputsHolder">
-                            <label>Wpisz swoje imię</label>
-                            <input type="text"
-                                   name="name"
-                                   value={name}
-                                   required={true}
-                                   style={borderStyle}
-                                   placeholder="Krzysztof"
-                                   onChange={(e) => setName(e.target.value)}
-                            />
-                            <span>{errorName}</span>
-                        </div>
-                        <div className="inputsHolder">
-                            <label>Wpisz swój email</label>
-                            <input type="text"
-                                   name="email"
-                                   value={email}
-                                   required={true}
-                                   style={borderStyle}
-                                   placeholder="abc@xyz.pl"
-                                   onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <span>{errorEmail}</span>
-                        </div>
-                    </div>
-                    <div className="textAreaHolder">
-                        <label>Wpisz swoją wiadomość</label>
-                        <textarea
-                            value={message}
-                            style={borderStyle}
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate non velit a hendrerit. Phasellus dictum mauris sit amet orci porta sollicitudin."
-                            onChange={(e) => setMessage(e.target.value)}
-                        >
+                <div className="textAreaHolder">
+                    <label>Wpisz swoją wiadomość</label>
+                    <textarea
+                        value={message}
+                        style={borderStyle}
+                        placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vulputate non velit a hendrerit. Phasellus dictum mauris sit amet orci porta sollicitudin."
+                        onChange={(e) => setMessage(e.target.value)}
+                    >
                     </textarea>
-                        <span>{errorMessage}</span>
-                        <button>Wyślij</button>
-                    </div>
-                </form>
+                    <span>{errorMessage}</span>
+                    <button>Wyślij</button>
+                </div>
+            </form>
         </div>
     );
 };

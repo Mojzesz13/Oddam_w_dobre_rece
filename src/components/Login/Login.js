@@ -2,9 +2,8 @@ import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
 import Navigation from "../Home/Navigation/Navigation";
 import fire from '../../config/Fire';
-import './LoginRegister.scss';
+import './LoginRegisterLogout.scss';
 import titleImg from '../../assets/Decoration.svg';
-
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -14,7 +13,7 @@ const Login = () => {
     const [passwordOneError, setPasswordOneError] = useState("");
     const [color, setColor] = useState("#707070");
 
-    const emailRequirements = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRequirements = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let borderStyle = {borderBottom: `1px solid ${color}`};
 
     const handleSubmit = (e) => {

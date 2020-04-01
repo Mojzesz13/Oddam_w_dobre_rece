@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './SideDrawer.scss'
-import NavList from './NavList';
 
 const SideDrawer = (props) => {
     let drawerClass = "sideDrawer";

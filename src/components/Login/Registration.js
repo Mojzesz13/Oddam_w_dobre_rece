@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
 import fire from '../../config/Fire';
 import Navigation from '../Home/Navigation/Navigation';
-import './LoginRegister.scss';
+import './LoginRegisterLogout.scss';
 import titleImg from '../../assets/Decoration.svg';
 
 const Registration = () => {
@@ -15,7 +15,7 @@ const Registration = () => {
     const [passwordTwoError, setPasswordTwoError] = useState("");
     const [color, setColor] = useState("#707070");
 
-    const emailRequirements = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRequirements = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let borderStyle = {borderBottom: `1px solid ${color}`};
 
     const handleSubmit = (e) => {
@@ -35,6 +35,7 @@ const Registration = () => {
     };
 
     const registration = e => {
+        e.preventDefault();
         fire.auth().createUserWithEmailAndPassword(email, passwordOne)
             .catch((error) => {
                 setFireErrors(error.message)
