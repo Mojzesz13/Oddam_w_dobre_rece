@@ -43,7 +43,7 @@ const HomeInstruction = () => {
                 </div>
             </div>
             <div className="buttonDiv">
-                <button><NavLink to="/login">ODDAJ RZECZY</NavLink></button>
+                <button><NavLink to="/giveAway">ODDAJ RZECZY</NavLink></button>
             </div>
         </div>
     );

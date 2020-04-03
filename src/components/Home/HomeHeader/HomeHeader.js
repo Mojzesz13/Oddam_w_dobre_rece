@@ -17,7 +17,7 @@ const HomeHeader = () => {
                 <div className="titleImg"><img src={titleImg} alt="decorationBar"/>
                 </div>
                 <div className="titleButtons">
-                    <button><NavLink to="/login">ODDAJ RZECZY</NavLink></button>
+                    <button><NavLink to="/giveAway">ODDAJ RZECZY</NavLink></button>
                     <button><NavLink to="/login">ZORGANIZUJ ZBIÓRKĘ</NavLink></button>
                 </div>
             </div>

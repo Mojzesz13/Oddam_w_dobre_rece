@@ -70,43 +70,92 @@
       }
     }
 
-    .selectBagsList {
+    .selectContainer {
+      margin-top: 5rem;
       display: flex;
-      font-size: 2.4rem;
-      font-weight: 300;
-      margin-top: 5.7rem;
+      align-items: center;
 
-      select {
+      p {
+        font-size: 2.4rem;
+        font-weight: 300;
+      }
+
+      .select {
+        width: 30rem;
         margin-left: 2.6rem;
-        background-color: Transparent;
-      }
-    }
+        font-size: 2.4rem;
+        font-weight: 300;
+        @include border(1px, $fontColor, 0);
 
-
-    @include buttonHomeTarget(7.9rem, 18rem, 2.4rem, black, 300, Transparent, black, 1px);
-
-      button {
-        @include border(0.75px, $secondFontColor, 0);
-        margin-top: 13rem;
-        font-family: $font-base;
-
-        &:hover {
-          background-color: white;
+        &:focus {
+          outline: none;
         }
-      }
 
+        .css-1pahdxg-control {
+          box-shadow: none;
+          border: none;
+          background-color: transparent;
+        }
 
-    .step2Button {
-      button {
-        @include border(0.75px, $secondFontColor, 0);
-        margin-top: 20rem;
-        margin-right: 4rem;
-        font-family: $font-base;
+        .css-yk16xz-control {
+          border: none;
+          border-radius: 0;
+          background-color: transparent;
 
-        &:hover {
-          background-color: white;
+          div:focus {
+            outline: none;
+          }
+
+          .css-1wa3eu0-placeholder {
+            color: $fontColor;
+            font-family: $font-base;
+            font-size: 2.4rem;
+          }
+        }
+
+        .css-26l3qy-menu {
+          right: 0;
+          width: 8.5rem;
+          background-color: transparent;
+          @include border(1px, $fontColor, 0);
+
+          .css-4ljt47-MenuList {
+            padding: 0;
+
+            div {
+              padding: .5rem 0;
+              font-size: 2.4rem;
+              text-align: center;
+
+              &:hover {
+                background-color: $decorationColor;
+              }
+            }
+          }
         }
       }
     }
   }
+
+  @include buttonHomeTarget(7.9rem, 18rem, 2.4rem, black, 300, Transparent, black, 1px);
+
+  button {
+    @include border(0.75px, $secondFontColor, 0);
+    margin-top: 13rem;
+    font-family: $font-base;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  .step2Button {
+    margin-top: 32rem;
+
+    button {
+      margin-right: 5rem;
+    }
+  }
+
 }
+
