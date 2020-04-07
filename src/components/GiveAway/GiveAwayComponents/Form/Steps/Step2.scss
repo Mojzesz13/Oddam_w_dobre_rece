@@ -1,0 +1,86 @@
+@import '../../../../../scss/settings/font';
+@import '../../../../../scss/settings/colors';
+@import './src/scss/settings/mixins';
+
+.formContainer {
+
+
+  .stepContainer {
+
+    .selectContainer {
+      margin-top: 5rem;
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 2.4rem;
+        font-weight: 300;
+      }
+
+      .select {
+        width: 30rem;
+        margin-left: 2.6rem;
+        font-size: 2.4rem;
+        font-weight: 300;
+        @include border(1px, $fontColor, 0);
+
+        &:focus {
+          outline: none;
+        }
+
+        .css-1pahdxg-control {
+          box-shadow: none;
+          border: none;
+          background-color: transparent;
+        }
+
+        .css-yk16xz-control {
+          border: none;
+          border-radius: 0;
+          background-color: transparent;
+
+          div:focus {
+            outline: none;
+          }
+
+          .css-1wa3eu0-placeholder {
+            color: $fontColor;
+            font-family: $font-base;
+            font-size: 2.4rem;
+          }
+        }
+
+        .css-26l3qy-menu {
+          right: 0;
+          width: 8.5rem;
+          background-color: transparent;
+          @include border(1px, $fontColor, 0);
+
+          .css-4ljt47-MenuList {
+            padding: 0;
+
+            div {
+              padding: .5rem 0;
+              font-size: 2.4rem;
+              text-align: center;
+
+              &:hover {
+                background-color: $decorationColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .step2Button {
+    margin-top: 32rem;
+
+    button {
+      margin-right: 5rem;
+    }
+  }
+}

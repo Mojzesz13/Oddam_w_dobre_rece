@@ -7,9 +7,6 @@ const Summary = (props) => {
             <div>{props.thing}</div>
             <div>{props.bags}</div>
             <div>{props.localization.location}</div>
-
-
-
             <button onClick={props.counterPrev}> poprzednia</button>
             <button onClick={props.counterNext}> nastepna</button>
 

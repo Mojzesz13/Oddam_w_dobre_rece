@@ -1,5 +1,7 @@
 import React from 'react';
 import Select from "react-select";
+import './Steps.scss'
+import './Step2.scss'
 
 const options = [
     {value: 1, label: '1'},
