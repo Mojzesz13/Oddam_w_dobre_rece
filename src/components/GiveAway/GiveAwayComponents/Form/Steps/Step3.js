@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-import {Checkbox, Radio} from 'react-btn-checkbox';
 import './Steps.scss'
 import './Step3.scss'
 
@@ -13,15 +12,11 @@ const options = [
     {value: 5, label: 'Poznań'}
 ];
 
-
-let options1 = {
-    'First': false,
-    'Second': false,
-    'Third': true
-};
-
-
 const Step3 = (props) => {
+
+    const handlerRadioGoal = (e) => {
+        props.localization({toWho: e.target.value});
+    };
 
     return (
         <div className="formContainer">
@@ -39,35 +34,51 @@ const Step3 = (props) => {
                             options={options}
                         />
                     </div>
-
                     <div className="radioButtonsContainer">
-                        <div className="radio-toolbar">
-                            <input type="radio" id="radioA" name="radioFruit" value="apple"/>
+                        <h2>Komu chcesz pomóc?</h2>
+                        <div className="radioToolbar">
+                            <input type="radio"
+                                   id="radioA"
+                                   name="radioTarget"
+                                   value="dzieciom"
+                                   onChange={handlerRadioGoal}
+                            />
                             <label htmlFor="radioA">dzieciom</label>
-
-                            <input type="radio" id="radioB" name="radioFruit" value="banana"/>
+                            <input type="radio"
+                                   id="radioB"
+                                   name="radioTarget"
+                                   value="samotnym matkom"
+                                   onChange={handlerRadioGoal}
+                            />
                             <label htmlFor="radioB">samotnym matkom</label>
-
-                            <input type="radio" id="radioC" name="radioFruit" value="orange"/>
+                            <input type="radio"
+                                   id="radioC"
+                                   name="radioTarget"
+                                   value="bezdomnym"
+                                   onChange={handlerRadioGoal}
+                            />
                             <label htmlFor="radioC">bezdomnym</label>
-
-                            <input type="radio" id="radioD" name="radioFruit" value="orange"/>
+                            <input type="radio"
+                                   id="radioD"
+                                   name="radioTarget"
+                                   value="niepełnosrawnym"
+                                   onChange={handlerRadioGoal}
+                            />
                             <label htmlFor="radioD">niepełnosrawnym</label>
-
-                            <input type="radio" id="radioE" name="radioFruit" value="orange"/>
+                            <input type="radio"
+                                   id="radioE"
+                                   name="radioTarget"
+                                   value="osobą starszym"
+                                   onChange={handlerRadioGoal}/>
                             <label htmlFor="radioE">osobą starszym</label>
                         </div>
                     </div>
-
                     <div className="specificOrganizations">
                         <h2>Wpisz nazwę konktetnej organizacji (opcjonalnie)</h2>
-                        <input placeholder="twoja strra"></input>
-
+                        <input name="organization" onChange={(e)=> props.localization({organization: e.target.value})}/>
                     </div>
-
-
                 </div>
-                <div className="step2Button">
+                <div className="step3Button">
                     <button onClick={props.counterPrev}>Wstecz</button>
                     <button onClick={props.counterNext}>Dalej</button>
                 </div>

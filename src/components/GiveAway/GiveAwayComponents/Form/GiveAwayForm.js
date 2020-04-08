@@ -8,13 +8,13 @@ import Summary from "./Steps/Summary";
 import ThankYou from "./Steps/ThankYou";
 
 const GiveAwayForm = () => {
-    const [viewNumber, setViewNumber] = useState(3);
+    const [viewNumber, setViewNumber] = useState(4);
     const [thingToGive, setThingToGive] = useState("");
     const [bagsNumber, setBagsNumber] = useState("");
     const [localization, setLocalization] = useState({
-        location: "",
-        toWho: "",
-        organization: ""
+        location: "aaa",
+        toWho: "bbb",
+        organization: "ccc",
     });
 
     const handlerNextView = () => {
@@ -41,7 +41,7 @@ const GiveAwayForm = () => {
         case 3:
             return <Step3 counterNext={handlerNextView}
                           counterPrev={handlerPrevView}
-                          localization={setLocalization}
+                          localization={setLocalization.organization}
             />;
         case 4:
             return <Step4 counterNext={handlerNextView}
@@ -52,6 +52,7 @@ const GiveAwayForm = () => {
                             thing={thingToGive}
                             bags={bagsNumber}
                             localization={localization}
+
             />;
         case 6:
             return <ThankYou counterPrev={handlerPrevView}/>;

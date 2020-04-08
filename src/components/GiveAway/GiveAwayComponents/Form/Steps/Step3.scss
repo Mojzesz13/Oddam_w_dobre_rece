@@ -15,7 +15,7 @@
 
     .select {
       width: 30rem;
-      margin-left: 0rem;
+      margin-left: 0;
       font-size: 2.4rem;
       font-weight: 300;
       @include border(1px, $fontColor, 0);
@@ -77,42 +77,67 @@
   .radioButtonsContainer {
     margin-top: 5rem;
 
-    .radio-toolbar {
-
+    .radioToolbar {
+      max-width: 70rem;
     }
 
-    .radio-toolbar input[type="radio"] {
+    .radioToolbar input[type="radio"] {
       opacity: 0;
       position: fixed;
       width: 0;
     }
 
-    .radio-toolbar label {
+    .radioToolbar label {
       display: inline-block;
       background-color: transparent;
-      padding: 10px 20px;
+      padding: 1.1rem 2.4rem;
       font-size: 2.4rem;
       font-weight: 300;
-      border: 2px solid #444;
-      margin-left: 1rem;
+      @include border(.75px, black, 0);
+      margin: 2.4rem 2.4rem 0 0;
+      cursor: pointer;
     }
 
-    .radio-toolbar label:hover {
-      background-color: #dfd;
+    .radioToolbar label:hover {
+      background-color: white;
     }
 
-    .radio-toolbar input[type="radio"]:focus + label {
-      border: 2px dashed #444;
+    .radioToolbar input[type="radio"]:focus + label {
+      @include border(.75px, $fontColor, 0);
     }
 
-    .radio-toolbar input[type="radio"]:checked + label {
-      background-color: #bfb;
-      border-color: #FAD648;
+    .radioToolbar input[type="radio"]:checked + label {
+      background-color: $decorationColor;
     }
   }
 
   .specificOrganizations {
     margin-top: 4.5rem;
+  }
+
+  .specificOrganizations {
+    input {
+      height: 4rem;
+      width: 57rem;
+      margin-top: 2rem;
+      background-color: transparent;
+      @include border(.75px, $fontColor, 0);
+      font-size: 2.4rem;
+      padding-left: 2rem;
+      cursor: pointer;
+
+      &:focus {
+        background-color: white;
+      }
+    }
+  }
+
+  .step3Button {
+    margin-top: 2rem;
+
+    button {
+      margin-right: 5rem;
+    }
   }
 }
 

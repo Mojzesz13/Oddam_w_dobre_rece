@@ -1,0 +1,34 @@
+
+.formContainer {
+  .stepContainer {
+    .stepsCounter {
+
+    }
+
+    .title {
+    }
+
+    .infoContainer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5rem;
+
+      .addressContainer {
+
+        height: 29.3rem;
+        width: 39.2rem;
+        background-color: #b3d4fc;
+      }
+
+      .dataContainer {
+        height: 29.3rem;
+        width: 39.2rem;
+        background-color: antiquewhite;
+      }
+    }
+  }
+
+  .step3Button {
+
+  }
+}
