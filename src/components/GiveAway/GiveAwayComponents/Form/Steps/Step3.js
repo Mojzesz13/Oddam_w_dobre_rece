@@ -14,8 +14,9 @@ const options = [
 
 const Step3 = (props) => {
 
+
     const handlerRadioGoal = (e) => {
-        props.localization({toWho: e.target.value});
+       props.localization({toWho: e.target.value});
     };
 
     return (

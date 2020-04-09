@@ -17,19 +17,60 @@ const GiveAwayForm = () => {
         organization: "ccc",
     });
 
-    const handlerNextView = () => {
-        setViewNumber(prevState => {
-            return prevState + 1
-        });
-    };
+    const [finalUpdate, setFinalUpdate] = useState(
+        {
+            viewNumber: 2,
+            stuffDescriptions: {
+                thingToGive: "",
+                bagsNumber: 0,
+                localization: {
+                    location: "aaa",
+                    toWho: "bbb",
+                    organization: "ccc",
+                },
+                address: {
+                    street: "",
+                    city: "",
+                    postCode: "",
+                    phoneNumber: [],
+                },
+                receiptDate: {
+                    data: [],
+                    time: [],
+                    comments: ""
+                }
+            }
+        }
+    )
+
+    // const handlerNextView = () => {
+    //     setViewNumber(prevState => {
+    //         return prevState + 1
+    //     });
+    // };
+    //
 
     const handlerPrevView = () => {
-        setViewNumber(prevState => {
-            return prevState - 1
-        });
+        setFinalUpdate(
+            prevState => {
+                return {
+                    viewNumber: prevState.viewNumber - 1
+                }
+            }
+        );
     };
 
-    switch (viewNumber) {
+    const handlerNextView = () => {
+        setFinalUpdate(
+            prevState => {
+                return {
+                    viewNumber: prevState.viewNumber + 1
+                }
+            }
+        );
+    };
+
+    switch (finalUpdate.viewNumber) {
         case 1:
             return <Step1 counterNext={handlerNextView}
                           thing={setThingToGive}/>;
@@ -41,7 +82,7 @@ const GiveAwayForm = () => {
         case 3:
             return <Step3 counterNext={handlerNextView}
                           counterPrev={handlerPrevView}
-                          localization={setLocalization.organization}
+                          localization={setLocalization}
             />;
         case 4:
             return <Step4 counterNext={handlerNextView}
