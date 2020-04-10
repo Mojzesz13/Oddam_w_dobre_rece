@@ -12,65 +12,75 @@ const GiveAwayForm = () => {
     const [thingToGive, setThingToGive] = useState("");
     const [bagsNumber, setBagsNumber] = useState("");
     const [localization, setLocalization] = useState({
-        location: "aaa",
-        toWho: "bbb",
-        organization: "ccc",
+        location: "",
+        toWho: "",
+        organization: "",
     });
-
-    const [finalUpdate, setFinalUpdate] = useState(
+    const [addressData, setAddressData] = useState(
         {
-            viewNumber: 2,
-            stuffDescriptions: {
-                thingToGive: "",
-                bagsNumber: 0,
-                localization: {
-                    location: "aaa",
-                    toWho: "bbb",
-                    organization: "ccc",
-                },
-                address: {
-                    street: "",
-                    city: "",
-                    postCode: "",
-                    phoneNumber: [],
-                },
-                receiptDate: {
-                    data: [],
-                    time: [],
-                    comments: ""
-                }
+            address: {
+                street: "11",
+                city: "2",
+                postCode: "3",
+                phoneNumber: [4],
+            },
+            receiptDate: {
+                data: [],
+                time: [],
+                comments: ""
             }
         }
     )
 
-    // const handlerNextView = () => {
-    //     setViewNumber(prevState => {
-    //         return prevState + 1
-    //     });
-    // };
+    // const [finalUpdate, setFinalUpdate] = useState(
+    //     {
+    //         viewNumber: 2,
+    //         stuffDescriptions: {
+    //             thingToGive: "",
+    //             bagsNumber: 0,
+    //             localization: {
+    //                 location: "aaa",
+    //                 toWho: "bbb",
+    //                 organization: "ccc",
+    //             },
+    //             address: {
+    //                 street: "",
+    //                 city: "",
+    //                 postCode: "",
+    //                 phoneNumber: [],
+    //             },
+    //             receiptDate: {
+    //                 data: [],
+    //                 time: [],
+    //                 comments: ""
+    //             }
+    //         }
+    //     }
+    // )
     //
+    // const handlerNextView = () => {
+    //     setFinalUpdate(
+    //         prevState => {
+    //             return {
+    //                 viewNumber: prevState.viewNumber + 1
+    //             }
+    //         }
+    //     );
+    // };
 
     const handlerPrevView = () => {
-        setFinalUpdate(
-            prevState => {
-                return {
-                    viewNumber: prevState.viewNumber - 1
-                }
-            }
-        );
+        setViewNumber(prevState => {
+            return prevState - 1
+        });
     };
 
     const handlerNextView = () => {
-        setFinalUpdate(
-            prevState => {
-                return {
-                    viewNumber: prevState.viewNumber + 1
-                }
-            }
-        );
+        setViewNumber(prevState => {
+            return prevState + 1
+        });
     };
 
-    switch (finalUpdate.viewNumber) {
+    switch (viewNumber) {
         case 1:
             return <Step1 counterNext={handlerNextView}
                           thing={setThingToGive}/>;
@@ -87,14 +97,17 @@ const GiveAwayForm = () => {
             />;
         case 4:
             return <Step4 counterNext={handlerNextView}
-                          counterPrev={handlerPrevView}/>;
+                          counterPrev={handlerPrevView}
+                          addressData={addressData}
+                          setAddress={setAddressData}
+            />;
         case 5:
             return <Summary counterNext={handlerNextView}
                             counterPrev={handlerPrevView}
                             thing={thingToGive}
                             bags={bagsNumber}
                             localization={localization}
-
+                            address={addressData}
             />;
         case 6:
             return <ThankYou counterPrev={handlerPrevView}/>;
