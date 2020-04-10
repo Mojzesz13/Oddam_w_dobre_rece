@@ -82,7 +82,8 @@ const GiveAwayForm = () => {
         case 3:
             return <Step3 counterNext={handlerNextView}
                           counterPrev={handlerPrevView}
-                          localization={setLocalization}
+                          localization={localization}
+                          setLocalization={setLocalization}
             />;
         case 4:
             return <Step4 counterNext={handlerNextView}

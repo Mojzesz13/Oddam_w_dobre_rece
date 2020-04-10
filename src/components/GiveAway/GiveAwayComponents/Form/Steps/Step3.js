@@ -3,7 +3,6 @@ import Select from 'react-select';
 import './Steps.scss'
 import './Step3.scss'
 
-
 const options = [
     {value: 1, label: 'Warszawa'},
     {value: 2, label: 'Wrocław'},
@@ -14,9 +13,8 @@ const options = [
 
 const Step3 = (props) => {
 
-
     const handlerRadioGoal = (e) => {
-       props.localization({toWho: e.target.value});
+        props.setLocalization({...props.localization, toWho: e.target.value,});
     };
 
     return (
@@ -31,7 +29,7 @@ const Step3 = (props) => {
                         <Select
                             className="select"
                             placeholder="- wybierz -"
-                            onChange={(e) => props.localization({location: e.label})}
+                            onChange={(e) => props.setLocalization({...props.localization, location: e.label})}
                             options={options}
                         />
                     </div>
@@ -70,13 +68,17 @@ const Step3 = (props) => {
                                    id="radioE"
                                    name="radioTarget"
                                    value="osobą starszym"
-                                   onChange={handlerRadioGoal}/>
+                                   onChange={handlerRadioGoal}
+                            />
                             <label htmlFor="radioE">osobą starszym</label>
                         </div>
                     </div>
                     <div className="specificOrganizations">
                         <h2>Wpisz nazwę konktetnej organizacji (opcjonalnie)</h2>
-                        <input name="organization" onChange={(e)=> props.localization({organization: e.target.value})}/>
+                        <input name="organization"
+                               onChange={(e) => props.setLocalization({
+                                   ...props.localization, organization: e.target.value
+                               })}/>
                     </div>
                 </div>
                 <div className="step3Button">
