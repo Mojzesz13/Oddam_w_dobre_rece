@@ -83,7 +83,8 @@ const GiveAwayForm = () => {
     switch (viewNumber) {
         case 1:
             return <Step1 counterNext={handlerNextView}
-                          thing={setThingToGive}/>;
+                          thing={setThingToGive}
+            />;
         case 2:
             return <Step2 counterNext={handlerNextView}
                           counterPrev={handlerPrevView}
@@ -110,9 +111,10 @@ const GiveAwayForm = () => {
                             address={addressData}
             />;
         case 6:
-            return <ThankYou counterPrev={handlerPrevView}/>;
+            return <ThankYou counterPrev={handlerPrevView}
+            />;
         default:
     }
-};
+}
 
 export default GiveAwayForm;

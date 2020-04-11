@@ -1,13 +1,7 @@
 import React from 'react';
 
 const Summary = (props) => {
-
     return (
-
-
-
-
-
         <div className="formContainer">
             Summary
             <div>{props.thing}</div>
@@ -24,7 +18,6 @@ const Summary = (props) => {
             <div>{props.address.receiptDate.comments}</div>
             <button onClick={props.counterPrev}> poprzednia</button>
             <button onClick={props.counterNext}> nastepna</button>
-
         </div>
     );
 };

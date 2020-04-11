@@ -1,34 +1,64 @@
+@import '../../../../../scss/settings/colors';
+@import './src/scss/settings/mixins';
 
 .formContainer {
   .stepContainer {
-    .stepsCounter {
-
-    }
-
-    .title {
-    }
-
     .infoContainer {
+      margin-top: 5rem;
       display: flex;
       justify-content: space-between;
-      margin-top: 5rem;
+
+      .inputHolder {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2.4rem;
+        font-weight: 300;
+
+        input {
+          height: 4rem;
+          width: 25rem;
+          background-color: #E8E9E4;
+          @include border(0.75px, $fontColor, 0);
+
+          &:focus {
+            background-color: white;
+          }
+        }
+      }
 
       .addressContainer {
-
         height: 29.3rem;
         width: 39.2rem;
-        background-color: #b3d4fc;
       }
 
       .dataContainer {
         height: 29.3rem;
         width: 39.2rem;
-        background-color: antiquewhite;
+
+        .informationHolder {
+          :nth-child(3) {
+            :nth-child(1) {
+              align-self: start;
+            }
+
+            :nth-child(2) {
+              height: 12rem;
+            }
+          }
+        }
       }
     }
   }
 
-  .step3Button {
+  .step4Button {
+    margin-top: 8.4rem;
 
+    button {
+      margin-right: 5rem;
+    }
   }
 }
