@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import DatePicker from 'react-date-picker';
 import './Steps.scss'
 import './Step4.scss'
 
@@ -29,7 +28,6 @@ const Step4 = (props) => {
             }
         }));
     }
-
 
     const handlerOnClick = () => {
         props.counterNext();
@@ -101,12 +99,12 @@ const Step4 = (props) => {
                                 </div>
                                 <div className="inputHolder">
                                     <p>Godzina</p>
-                                    <input onChange={(e) => setTime(e.target.value)}
+                                    <input type="time" onChange={(e) => setTime(e.target.value)}
                                     />
                                 </div>
                                 <div className="inputHolder">
                                     <p>Uwagi do kuriera</p>
-                                    <input onChange={(e) => setComments(e.target.value)}
+                                    <textarea onChange={(e) => setComments(e.target.value)}
                                     />
                                 </div>
                             </div>

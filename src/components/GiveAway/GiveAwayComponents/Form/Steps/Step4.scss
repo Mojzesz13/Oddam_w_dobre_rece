@@ -44,11 +44,14 @@
             :nth-child(1) {
               align-self: start;
             }
-
-            :nth-child(2) {
+            textarea {
               height: 12rem;
+              width: 33rem;
+              background-color: #E8E9E4;
+              @include border(0.75px, $fontColor, 0);
             }
           }
+
         }
       }
     }
