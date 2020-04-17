@@ -1,0 +1,45 @@
+
+.formContainer {
+
+
+  .titleSummary {
+    width: 50%;
+    margin-left: 14rem;
+    font-size: 3.6rem;
+    font-weight: 600;
+    padding-top: 7rem;
+  }
+
+  .giveSummary {
+    width: 100%;
+    margin: 4.5rem 0 0 14rem;
+    font-size: 2.4rem;
+
+
+    .holder {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      p {
+        margin-left: 2rem;
+      }
+
+    }
+  }
+
+  .infoSummary {
+    margin-left: 14rem;
+    .addressSummary {
+
+    }
+
+    .dataSummary {
+
+    }
+  }
+  img{
+    height: 5rem;
+    width: 5rem;
+  }
+}
