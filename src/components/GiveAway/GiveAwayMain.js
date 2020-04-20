@@ -3,7 +3,6 @@ import './GiveAwayMain.scss'
 import HomeContact from "../Home/HomeContact/HomeContact";
 import GiveAwayHeader from "./GiveAwayComponents/Header/GiveAwayHeader";
 import GiveAwayForm from "./GiveAwayComponents/Form/GiveAwayForm";
-import GiveAwayInfo from "./GiveAwayComponents/Header/GiveAwayInfo/GiveAwayInfo";
 
 const GiveAwayMain = () => {
 
@@ -11,12 +10,9 @@ const GiveAwayMain = () => {
 
         <div className="giveAwayContainer">
             <GiveAwayHeader/>
-            <GiveAwayInfo/>
             <GiveAwayForm/>
             <HomeContact/>
         </div>
-
-
     );
 };
 

@@ -8,6 +8,10 @@ import courier from '../../../../../assets/Icon-4.svg';
 const Summary = (props) => {
 
 
+    const user1 = {
+        bags: props.bags,
+
+    }
 
     return (
         <div className="formContainer">
@@ -17,7 +21,7 @@ const Summary = (props) => {
                     <h2>Oddajesz:</h2>
                     <div className="items holder">
                         <img src={tShirt} alt="tShirtImg"/>
-                        <p>{props.bags} worki, {props.thing}, {props.localization.toWho}</p>
+                        <p>{user1.bags} worki, {props.thing}, {props.localization.toWho}</p>
                     </div>
                     <div className="location holder">
                         <img src={courier} alt="courierImg"/>

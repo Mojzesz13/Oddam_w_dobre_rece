@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Steps.scss'
 import './Step4.scss'
+import GiveAwayInfo from "../../GiveAwayInfo/GiveAwayInfo";
 
 const Step4 = (props) => {
     const [city, setCity] = useState("");
@@ -56,67 +57,71 @@ const Step4 = (props) => {
     // }))
 
     return (
-        <div className="formContainer">
-            <div className="stepContainer">
-                <div className="stepsCounter">
-                    Krok 4/4
-                </div>
-                <div className="title">
-                    Podaj adres oraz termin odbioru rzeczy przez kuriera
-                    <div className="infoContainer">
-                        <div className="addressContainer">
-                            <h2>Adres odbioru:</h2>
-                            <div className="informationHolder">
-                                <div className="inputHolder">
-                                    <p>Ulica</p>
-                                    <input onChange={(e) => setStreet(e.target.value)}
-                                    />
-                                </div>
-                                <div className="inputHolder">
-                                    <p>Miasto </p>
-                                    <input onChange={(e) => setCity(e.target.value)}
-                                    />
-                                </div>
-                                <div className="inputHolder">
-                                    <p>Kod pocztowy </p>
-                                    <input onChange={(e) => setPostCode(e.target.value)}
-                                    />
-                                </div>
-                                <div className="inputHolder">
-                                    <p>Numer Telefonu </p>
-                                    <input onChange={(e) => setPhoneNumber(e.target.value)}
-                                    />
+        <>
+            <GiveAwayInfo view={props.view}/>
+            <div className="formContainer">
+                <div className="stepContainer">
+                    <div className="stepsCounter">
+                        Krok 4/4
+                    </div>
+                    <div className="title">
+                        Podaj adres oraz termin odbioru rzeczy przez kuriera
+                        <div className="infoContainer">
+                            <div className="addressContainer">
+                                <h2>Adres odbioru:</h2>
+                                <div className="informationHolder">
+                                    <div className="inputHolder">
+                                        <p>Ulica</p>
+                                        <input onChange={(e) => setStreet(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="inputHolder">
+                                        <p>Miasto </p>
+                                        <input onChange={(e) => setCity(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="inputHolder">
+                                        <p>Kod pocztowy </p>
+                                        <input onChange={(e) => setPostCode(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="inputHolder">
+                                        <p>Numer Telefonu </p>
+                                        <input onChange={(e) => setPhoneNumber(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="dataContainer">
-                            <h2>Termin odbioru:</h2>
-                            <div className="informationHolder">
-                                <div className="inputHolder">
-                                    <p>Data</p>
-                                    <input type="date" value={data} onChange={(e) => setData(e.target.value)}
-                                    />
-                                </div>
-                                <div className="inputHolder">
-                                    <p>Godzina</p>
-                                    <input type="time" onChange={(e) => setTime(e.target.value)}
-                                    />
-                                </div>
-                                <div className="inputHolder">
-                                    <p>Uwagi do kuriera</p>
-                                    <textarea onChange={(e) => setComments(e.target.value)}
-                                    />
+                            <div className="dataContainer">
+                                <h2>Termin odbioru:</h2>
+                                <div className="informationHolder">
+                                    <div className="inputHolder">
+                                        <p>Data</p>
+                                        <input type="date" value={data} onChange={(e) => setData(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="inputHolder">
+                                        <p>Godzina</p>
+                                        <input type="time" onChange={(e) => setTime(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="inputHolder">
+                                        <p>Uwagi do kuriera</p>
+                                        <textarea onChange={(e) => setComments(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="step4Button">
-                    <button onClick={props.counterPrev}>Wstecz</button>
-                    <button onClick={handlerOnClick}>Dalej</button>
+                    <div className="step4Button">
+                        <button onClick={props.counterPrev}>Wstecz</button>
+                        <button onClick={handlerOnClick}>Dalej</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
+
     );
 };
 
