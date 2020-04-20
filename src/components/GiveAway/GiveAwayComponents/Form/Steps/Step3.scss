@@ -25,30 +25,30 @@
       }
 
       .css-1pahdxg-control {
+        background-color: transparent;
         box-shadow: none;
         border: none;
-        background-color: transparent;
       }
 
       .css-yk16xz-control {
+        background-color: transparent;
         border: none;
         border-radius: 0;
-        background-color: transparent;
 
         div:focus {
           outline: none;
         }
 
         .css-1wa3eu0-placeholder {
+          font-size: 2.4rem;
           color: $fontColor;
           font-family: $font-base;
-          font-size: 2.4rem;
         }
       }
 
       .css-26l3qy-menu {
-        right: 0;
         width: 100%;
+        right: 0;
         background-color: #E8E9E4;
         @include border(1px, $fontColor, 0);
 
@@ -82,19 +82,19 @@
     }
 
     .radioToolbar input[type="radio"] {
-      opacity: 0;
-      position: fixed;
       width: 0;
+      position: fixed;
+      opacity: 0;
     }
 
     .radioToolbar label {
-      display: inline-block;
-      background-color: transparent;
+      margin: 2.4rem 2.4rem 0 0;
       padding: 1.1rem 2.4rem;
+      background-color: transparent;
+      display: inline-block;
       font-size: 2.4rem;
       font-weight: 300;
       @include border(.75px, black, 0);
-      margin: 2.4rem 2.4rem 0 0;
       cursor: pointer;
     }
 
@@ -120,10 +120,10 @@
       height: 4rem;
       width: 57rem;
       margin-top: 2rem;
+      padding-left: 2rem;
       background-color: transparent;
       @include border(.75px, $fontColor, 0);
       font-size: 2.4rem;
-      padding-left: 2rem;
       cursor: pointer;
 
       &:focus {

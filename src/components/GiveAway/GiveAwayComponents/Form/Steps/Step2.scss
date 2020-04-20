@@ -26,15 +26,15 @@
         }
 
         .css-1pahdxg-control {
+          background-color: transparent;
           box-shadow: none;
           border: none;
-          background-color: transparent;
         }
 
         .css-yk16xz-control {
+          background-color: transparent;
           border: none;
           border-radius: 0;
-          background-color: transparent;
 
           div:focus {
             outline: none;
@@ -42,14 +42,14 @@
 
           .css-1wa3eu0-placeholder {
             color: $fontColor;
-            font-family: $font-base;
             font-size: 2.4rem;
+            font-family: $font-base;
           }
         }
 
         .css-26l3qy-menu {
-          right: 0;
           width: 8.5rem;
+          right: 0;
           background-color: transparent;
           @include border(1px, $fontColor, 0);
 

@@ -11,7 +11,6 @@ const options = [
 ];
 
 const Step2 = (props) => {
-
     return (
         <div className="formContainer">
             <div className="stepContainer">

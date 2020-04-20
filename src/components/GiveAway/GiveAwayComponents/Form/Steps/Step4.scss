@@ -49,6 +49,9 @@
               width: 33rem;
               background-color: #E8E9E4;
               @include border(0.75px, $fontColor, 0);
+              &:focus  {
+                background-color: white;
+              }
             }
           }
 
@@ -58,7 +61,7 @@
   }
 
   .step4Button {
-    margin-top: 8.4rem;
+    margin-top: 11.6rem;
 
     button {
       margin-right: 5rem;
