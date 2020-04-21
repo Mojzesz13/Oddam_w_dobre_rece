@@ -10,7 +10,7 @@ import ThankYou from "./Steps/ThankYou";
 const GiveAwayForm = () => {
     const [viewNumber, setViewNumber] = useState(5);
     const [thingToGive, setThingToGive] = useState("test");
-    const [bagsNumber, setBagsNumber] = useState(2);
+    const [bagsNumber, setBagsNumber] = useState(5);
     const [localization, setLocalization] = useState({
         location: "test",
         toWho: "test",
@@ -25,8 +25,8 @@ const GiveAwayForm = () => {
                 phoneNumber: [4],
             },
             receiptDate: {
-                data: [],
-                time: [],
+                data: [1111],
+                time: [2222],
                 comments: ""
             }
         }
