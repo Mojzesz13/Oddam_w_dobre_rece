@@ -8,8 +8,8 @@ import Summary from "./Steps/Summary";
 import ThankYou from "./Steps/ThankYou";
 
 const GiveAwayForm = () => {
-    const [viewNumber, setViewNumber] = useState(5);
-    const [thingToGive, setThingToGive] = useState("test");
+    const [viewNumber, setViewNumber] = useState(1);
+    const [thingToGive, setThingToGive] = useState("");
     const [bagsNumber, setBagsNumber] = useState(5);
     const [localization, setLocalization] = useState({
         location: "test",

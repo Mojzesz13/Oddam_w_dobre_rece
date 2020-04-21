@@ -4,9 +4,29 @@ import GiveAwayInfo from "../../GiveAwayInfo/GiveAwayInfo";
 
 const Step1 = (props) => {
 
+
+    let errorMessage= "test";
+
     const handlerRadio = (e) => {
         props.thing(e.target.value);
+
+        if(e.target.value.length === ""){
+            errorMessage = "Musisz cos zazanaczyc"
+        }
     };
+
+
+    const handlerNextPage = (e) => {
+
+        if(e.target.value === ""){
+            errorMessage = "Musisz cos zazanaczyc"
+        }
+        else {
+           return props.counterNext
+        }
+    }
+
+
 
     return (
         <>
@@ -62,7 +82,8 @@ const Step1 = (props) => {
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
                     </div>
-                    <button className="step1Button" onClick={props.counterNext}>Dalej</button>
+                    {errorMessage}
+                    <button className="step1Button" onClick={handlerNextPage }>Dalej</button>
                 </div>
             </div>
         </>
