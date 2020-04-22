@@ -29,13 +29,14 @@ const Step2 = (props) => {
                         <Select
                             className="select"
                             placeholder="- wybierz -"
-                            onChange={(e) => props.bags(e.value)}
+                            onChange={(e) => props.setBags(e.value)}
                             options={options}
                         />
                     </div>
-                    <div className="step2Button">
-                        <button onClick={props.counterPrev}>Wstecz</button>
-                        <button onClick={props.counterNext}>Dalej</button>
+                    <div className="formFooter">
+                        <button className="step2Button"  onClick={props.counterPrev}>Wstecz</button>
+                        <button className="step2Button" onClick={()=>props.handlerNextPage(props.bags)}>Dalej</button>
+                        {props.isError ? <p className="errorMessage errorStep2">Proszę podać liczbę worków</p> : null}
                     </div>
                 </div>
             </div>

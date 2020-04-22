@@ -9,24 +9,25 @@ import ThankYou from "./Steps/ThankYou";
 
 const GiveAwayForm = () => {
     const [viewNumber, setViewNumber] = useState(1);
+    const [isError, setIsError] = useState(false);
     const [thingToGive, setThingToGive] = useState("");
-    const [bagsNumber, setBagsNumber] = useState(5);
+    const [bagsNumber, setBagsNumber] = useState("");
     const [localization, setLocalization] = useState({
-        location: "test",
-        toWho: "test",
+        location: "",
+        toWho: "",
         organization: "",
     });
     const [addressData, setAddressData] = useState(
         {
             address: {
-                street: "11",
-                city: "2",
-                postCode: "3",
-                phoneNumber: [4],
+                street: "",
+                city: "",
+                postCode: "",
+                phoneNumber: "",
             },
             receiptDate: {
-                data: [1111],
-                time: [2222],
+                data: "",
+                time: "",
                 comments: ""
             }
         }
@@ -80,24 +81,45 @@ const GiveAwayForm = () => {
         });
     };
 
+    const handlerNextPage = (parameter, p2) => {
+        if (parameter === "" || p2 === "") {
+            setIsError(true);
+        } else {
+            setIsError(false);
+            setViewNumber(prevState => {
+                return prevState + 1
+            });
+        }
+    }
+
+
     switch (viewNumber) {
         case 1:
-            return <Step1 counterNext={handlerNextView}
-                          view={viewNumber}
-                          thing={setThingToGive}
+            return <Step1 view={viewNumber}
+                          setView={setViewNumber}
+                          thing={thingToGive}
+                          setThing={setThingToGive}
+                          isError={isError}
+                          handlerNextPage={handlerNextPage}
+
+
             />;
         case 2:
-            return <Step2 counterNext={handlerNextView}
-                          counterPrev={handlerPrevView}
-                          bags={setBagsNumber}
+            return <Step2 counterPrev={handlerPrevView}
+                          handlerNextPage={handlerNextPage}
+                          bags={bagsNumber}
+                          setBags={setBagsNumber}
                           view={viewNumber}
+                          setView={setViewNumber}
+                          isError={isError}
             />;
         case 3:
-            return <Step3 counterNext={handlerNextView}
+            return <Step3 handlerNextPage={handlerNextPage}
                           counterPrev={handlerPrevView}
                           view={viewNumber}
                           localization={localization}
                           setLocalization={setLocalization}
+                          isError={isError}
 
             />;
         case 4:
@@ -106,7 +128,6 @@ const GiveAwayForm = () => {
                           view={viewNumber}
                           addressData={addressData}
                           setAddress={setAddressData}
-
             />;
         case 5:
             return <Summary counterNext={handlerNextView}

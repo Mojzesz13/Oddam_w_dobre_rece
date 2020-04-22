@@ -11,29 +11,62 @@ const Step4 = (props) => {
     const [data, setData] = useState(new Date().toDateString());
     const [time, setTime] = useState("");
     const [comments, setComments] = useState("");
+    const [isError, setIsError] = useState(false);
 
-    const handleSetInfo = () => {
-        props.setAddress(prevState => ({
-            address: {
-                ...prevState.address,
-                city,
-                street,
-                postCode,
-                phoneNumber
-            },
-            receiptDate: {
-                ...prevState.receiptDate,
-                data,
-                time,
-                comments
-            }
-        }));
+    const handleSetInfo = (element) => {
+        if(Object.values(element).includes("") === true) {
+            setIsError(true);
+        }else {
+
+            props.setAddress(prevState => ({
+                address: {
+                    ...prevState.address,
+                    city,
+                    street,
+                    postCode,
+                    phoneNumber
+                },
+                receiptDate: {
+                    ...prevState.receiptDate,
+                    data,
+                    time,
+                    comments
+                }
+            }));
+        }
     }
 
     const handlerOnClick = () => {
         props.counterNext();
-        handleSetInfo();
+        handleSetInfo(props.addressData);
     }
+
+    // handleStepFour = (form) => {
+    //     if(Object.values(form).includes('') === true) {
+    //         this.setState({error: 'Uzupełnij dane!'});
+    //         return null;
+    //     }
+    //
+    //     this.setState(prevState => {
+    //         return {
+    //             step: prevState.step + 1,
+    //             gift: {
+    //                 ...prevState.gift,
+    //                 address: {
+    //                     street: form.street,
+    //                     city: form.city,
+    //                     zipCode: form.zip,
+    //                     phone: form.phone
+    //                 },
+    //                 details: {
+    //                     date: form.date,
+    //                     time: form.time,
+    //                     more: form.details
+    //                 }
+    //             }
+    //         }
+    //     });
+    // };
 
     // onChange={(e => props.setAddress({
     //     ...props.addressData,
@@ -115,8 +148,9 @@ const Step4 = (props) => {
                         </div>
                     </div>
                     <div className="step4Button">
-                        <button onClick={props.counterPrev}>Wstecz</button>
-                        <button onClick={handlerOnClick}>Dalej</button>
+                        <button className="step4Button"  onClick={props.counterPrev}>Wstecz</button>
+                        <button className="step4Button" onClick={handlerOnClick}>Dalej</button>
+                        {isError ? <p className="errorMessage">Proszę uzupełnić wszystkie pola</p> : null}
                     </div>
                 </div>
             </div>

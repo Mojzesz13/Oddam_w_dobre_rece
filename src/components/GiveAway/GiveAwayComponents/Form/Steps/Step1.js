@@ -3,34 +3,24 @@ import './Steps.scss'
 import GiveAwayInfo from "../../GiveAwayInfo/GiveAwayInfo";
 
 const Step1 = (props) => {
-
-
-    let errorMessage= "test";
+    // const [isError, setIsError] = useState(false);
 
     const handlerRadio = (e) => {
-        props.thing(e.target.value);
-
-        if(e.target.value.length === ""){
-            errorMessage = "Musisz cos zazanaczyc"
-        }
+        props.setThing(e.target.value);
     };
 
-
-    const handlerNextPage = (e) => {
-
-        if(e.target.value === ""){
-            errorMessage = "Musisz cos zazanaczyc"
-        }
-        else {
-           return props.counterNext
-        }
-    }
-
-
+    // const handlerNextPage = () => {
+    //     if (props.thing === "") {
+    //         setIsError(true);
+    //     } else {
+    //         setIsError(false);
+    //         props.setView(2);
+    //     }
+    // }
 
     return (
         <>
-            <GiveAwayInfo view = {props.view}/>
+            <GiveAwayInfo view={props.view}/>
             <div className="formContainer">
                 <div className="stepContainer">
                     <div className="stepsCounter">
@@ -82,8 +72,10 @@ const Step1 = (props) => {
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
                     </div>
-                    {errorMessage}
-                    <button className="step1Button" onClick={handlerNextPage }>Dalej</button>
+                    <div className="formFooter">
+                        <button className="step1Button" onClick={()=>props.handlerNextPage(props.thing)}>Dalej</button>
+                        {props.isError ? <p className="errorMessage">Proszę zaznaczyć jedną z dostępnych opcji</p> : null}
+                    </div>
                 </div>
             </div>
         </>

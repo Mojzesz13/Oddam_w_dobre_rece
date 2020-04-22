@@ -20,7 +20,7 @@ const Step3 = (props) => {
 
     return (
         <>
-            <GiveAwayInfo view = {props.view}/>
+            <GiveAwayInfo view={props.view}/>
             <div className="formContainer">
                 <div className="stepContainer">
                     <div className="stepsCounter">
@@ -84,9 +84,13 @@ const Step3 = (props) => {
                                    })}/>
                         </div>
                     </div>
-                    <div className="step3Button">
-                        <button onClick={props.counterPrev}>Wstecz</button>
-                        <button onClick={props.counterNext}>Dalej</button>
+                    <div className="formFooter">
+                        <button className="step3Button" onClick={props.counterPrev}>Wstecz</button>
+                        <button className="step3Button"
+                                onClick={() => props.handlerNextPage(props.localization.localization, props.localization.toWho)}>Dalej
+                        </button>
+                        {props.isError ?
+                            <p className="errorMessage errorStep3">Proszę uzupełnić wszystkie wymagane pola</p> : null}
                     </div>
                 </div>
             </div>

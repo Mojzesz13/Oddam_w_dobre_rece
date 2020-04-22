@@ -5,6 +5,7 @@
 .formContainer {
   height: 88.3rem;
   background-image: url("../../../../../assets/Background-Form.jpg");
+  background-position: center;
 
   .stepContainer {
     width: 50%;
@@ -71,16 +72,36 @@
     }
   }
 
-  @include buttonHomeTarget(7.9rem, 18rem, 2.4rem, black, 300, transparent, black, 1px);
+  .formFooter {
+    display: flex;
+    flex-direction: row;
 
-  button {
-    margin-top: 13rem;
-    font-family: $font-base;
-    @include border(0.75px, $secondFontColor, 0);
+    .errorMessage {
+      margin: -20% 0 0 40%;
+      text-align: center;
+      font-size: 3rem;
+      color: red;
+    }
 
-    &:hover {
-      background-color: white;
+    @include buttonHomeTarget(7.9rem, 18rem, 2.4rem, black, 300, transparent, black, 1px);
+
+    button {
+      min-width: 18rem;
+      margin-top: 12%;
+      font-family: $font-base;
+      @include border(0.75px, $secondFontColor, 0);
+
+      &:hover {
+        background-color: white;
+      }
     }
   }
 }
 
+@include tablet {
+
+}
+
+@include mobile {
+
+}
