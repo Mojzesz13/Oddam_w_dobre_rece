@@ -14,7 +14,7 @@ const options = [
 
 const Step3 = (props) => {
 
-    const handlerRadioGoal = (e) => {
+    const handleRadioGoal = (e) => {
         props.setLocalization({...props.localization, toWho: e.target.value});
     };
 
@@ -43,35 +43,35 @@ const Step3 = (props) => {
                                        id="radioA"
                                        name="radioTarget"
                                        value="dzieciom"
-                                       onChange={handlerRadioGoal}
+                                       onChange={handleRadioGoal}
                                 />
                                 <label htmlFor="radioA">dzieciom</label>
                                 <input type="radio"
                                        id="radioB"
                                        name="radioTarget"
                                        value="samotnym matkom"
-                                       onChange={handlerRadioGoal}
+                                       onChange={handleRadioGoal}
                                 />
                                 <label htmlFor="radioB">samotnym matkom</label>
                                 <input type="radio"
                                        id="radioC"
                                        name="radioTarget"
                                        value="bezdomnym"
-                                       onChange={handlerRadioGoal}
+                                       onChange={handleRadioGoal}
                                 />
                                 <label htmlFor="radioC">bezdomnym</label>
                                 <input type="radio"
                                        id="radioD"
                                        name="radioTarget"
                                        value="niepełnosrawnym"
-                                       onChange={handlerRadioGoal}
+                                       onChange={handleRadioGoal}
                                 />
                                 <label htmlFor="radioD">niepełnosrawnym</label>
                                 <input type="radio"
                                        id="radioE"
                                        name="radioTarget"
                                        value="osobą starszym"
-                                       onChange={handlerRadioGoal}
+                                       onChange={handleRadioGoal}
                                 />
                                 <label htmlFor="radioE">osobą starszym</label>
                             </div>

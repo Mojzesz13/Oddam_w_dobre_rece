@@ -5,7 +5,7 @@ import GiveAwayInfo from "../../GiveAwayInfo/GiveAwayInfo";
 const Step1 = (props) => {
     // const [isError, setIsError] = useState(false);
 
-    const handlerRadio = (e) => {
+    const handleRadio = (e) => {
         props.setThing(e.target.value);
     };
 
@@ -34,7 +34,7 @@ const Step1 = (props) => {
                             <input type="radio"
                                    name="radio"
                                    value="Ubrania, które nadają się do ponownego użycia"
-                                   onClick={handlerRadio}/>
+                                   onClick={handleRadio}/>
                             <p>ubrania, które nadają się do ponownego użycia </p>
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
@@ -42,7 +42,7 @@ const Step1 = (props) => {
                             <input type="radio"
                                    name="radio"
                                    value="Ubrania do wyrzucenia"
-                                   onClick={handlerRadio}/>
+                                   onClick={handleRadio}/>
                             <p>ubrania do wyrzucenia</p>
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
@@ -51,7 +51,7 @@ const Step1 = (props) => {
                                 type="radio"
                                 name="radio"
                                 value="Zabawki"
-                                onClick={handlerRadio}/>
+                                onClick={handleRadio}/>
                             <p>zabawki</p>
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
@@ -59,7 +59,7 @@ const Step1 = (props) => {
                             <input type="radio"
                                    name="radio"
                                    value="Książki"
-                                   onClick={handlerRadio}/>
+                                   onClick={handleRadio}/>
                             <p>książki</p>
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
@@ -67,7 +67,7 @@ const Step1 = (props) => {
                             <input type="radio"
                                    name="radio"
                                    value="Inne"
-                                   onClick={handlerRadio}/>
+                                   onClick={handleRadio}/>
                             <p>inne</p>
                             <span className="checkMark">{/*empty*/}</span>
                         </label>
