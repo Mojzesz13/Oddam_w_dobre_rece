@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './Steps.scss'
 import './Step4.scss'
 import GiveAwayInfo from "../../GiveAwayInfo/GiveAwayInfo";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
 
 const Step4 = (props) => {
     const [city, setCity] = useState("");
@@ -11,15 +13,15 @@ const Step4 = (props) => {
     const [data, setData] = useState(new Date().toDateString());
     const [time, setTime] = useState("");
     const [comments, setComments] = useState("");
-    const [errorInfo, setErrorInfo] = useState({
-        cityError: "",
-        streetError: "1",
-        postCodeError: "2",
-        phoneNumberError: "",
-        dataError: "3",
-        timeError: "",
-        commentsError: "",
-    });
+    const [errorInfo, setErrorInfo] = useState(
+        {
+            cityError: "",
+            streetError: "",
+            postCodeError: "",
+            phoneNumberError: "",
+            dataError: "",
+            timeError: "",
+        });
 
     const handleSetInfo = () => {
         props.setAddress(prevState => ({
@@ -45,7 +47,7 @@ const Step4 = (props) => {
         handleSetInfo(props.addressData);
     }
 
-    const validate = () => {
+    const isValidate = () => {
         let result = [];
         Object.keys(errorInfo).forEach(function (key) {
             if (errorInfo[key] !== "") {
@@ -55,40 +57,40 @@ const Step4 = (props) => {
         return result
     }
 
+    const validate = (e) => {
+        e.preventDefault();
 
-    const test = () =>{
-        if(city === "") {
-            setErrorInfo( {...errorInfo, cityError:"uzupełnij Miasto"})
+        let streetError = "";
+        let cityError = "";
+        let postCodeError = "";
+        let phoneNumberError = "";
+        let dataError = "";
+        let timeError = "";
+
+        if (street.includes("")) {
+            streetError = "uzupelnij Ulice"
         }
+        if (city.includes("")) {
+            cityError = "uzupelnij Miasto"
+        }
+        if (postCode.includes("")) {
+            postCodeError = "uzupelnij kod pocztowy"
+        }
+        if (phoneNumber.includes("")) {
+            phoneNumberError = "uzupelnij numer telefonu"
+        }
+        if (data.includes("")) {
+            dataError = "uzupelnij date"
+        }
+        if (time.includes("")) {
+            timeError = "uzupelnij Godzinę"
+        }
+        if (streetError || cityError) {
+            setErrorInfo({...errorInfo, streetError, cityError, postCodeError, phoneNumberError, dataError, timeError})
+            return false
+        }
+        return true
     }
-
-
-    // handleStepFour = (form) => {
-    //     if(Object.values(form).includes('') === true) {
-    //         this.setState({error: 'Uzupełnij dane!'});
-    //         return null;
-    //     }
-    //
-    //     this.setState(prevState => {
-    //         return {
-    //             step: prevState.step + 1,
-    //             gift: {
-    //                 ...prevState.gift,
-    //                 address: {
-    //                     street: form.street,
-    //                     city: form.city,
-    //                     zipCode: form.zip,
-    //                     phone: form.phone
-    //                 },
-    //                 details: {
-    //                     date: form.date,
-    //                     time: form.time,
-    //                     more: form.details
-    //                 }
-    //             }
-    //         }
-    //     });
-    // };
 
     // onChange={(e => props.setAddress({
     //     ...props.addressData,
@@ -187,8 +189,8 @@ const Step4 = (props) => {
                     <div className="formFooter">
                         <button className="step4Button" onClick={props.counterPrev}>Wstecz</button>
                         <button className="step4Button" onClick={handleOnClick}>Dalej</button>
-                        <button className="step4Button" onClick={test}>tst</button>
-                        <div className="errorMessage errorStep4">{validate()} </div>
+                        <button className="step4Button" onClick={validate}>test</button>
+                        <div className="errorMessage errorStep4">{isValidate()} </div>
                     </div>
                 </div>
             </form>
