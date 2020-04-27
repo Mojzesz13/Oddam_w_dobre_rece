@@ -11,7 +11,15 @@ const Step4 = (props) => {
     const [data, setData] = useState(new Date().toDateString());
     const [time, setTime] = useState("");
     const [comments, setComments] = useState("");
-    const [isError, setIsError] = useState(false);
+    const [errorInfo, setErrorInfo] = useState({
+        cityError: "",
+        streetError: "1",
+        postCodeError: "2",
+        phoneNumberError: "",
+        dataError: "3",
+        timeError: "",
+        commentsError: "",
+    });
 
     const handleSetInfo = () => {
         props.setAddress(prevState => ({
@@ -29,22 +37,30 @@ const Step4 = (props) => {
                 comments
             }
         }));
-
     }
 
     const handleOnClick = () => {
-
         props.counterNext();
+        // const isValid = validate();
         handleSetInfo(props.addressData);
     }
 
-
     const validate = () => {
-
+        let result = [];
+        Object.keys(errorInfo).forEach(function (key) {
+            if (errorInfo[key] !== "") {
+                result.push(errorInfo[key] + ", ");
+            }
+        })
+        return result
     }
 
 
-
+    const test = () =>{
+        if(city === "") {
+            setErrorInfo( {...errorInfo, cityError:"uzupełnij Miasto"})
+        }
+    }
 
 
     // handleStepFour = (form) => {
@@ -98,7 +114,7 @@ const Step4 = (props) => {
     return (
         <>
             <GiveAwayInfo view={props.view}/>
-            <div className="formContainer">
+            <form className="formContainer">
                 <div className="stepContainer">
                     <div className="stepsCounter">
                         Krok 4/4
@@ -158,25 +174,25 @@ const Step4 = (props) => {
                                     </div>
                                     <div className="inputHolder">
                                         <label htmlFor="comments">Uwagi do kuriera</label>
-                                        <textarea type="text"
-                                                  name="comments"
-                                                  value="This is a description."
-                                                  onChange={(e) => setComments(e.target.value)}
+                                        <textarea
+                                            name="comments"
+                                            value=""
+                                            onChange={(e) => setComments(e.target.value)}
                                         />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="step4Button">
+                    <div className="formFooter">
                         <button className="step4Button" onClick={props.counterPrev}>Wstecz</button>
                         <button className="step4Button" onClick={handleOnClick}>Dalej</button>
-                        {isError ? <p className="errorMessage">Proszę uzupełnić wszystkie pola</p> : null}
+                        <button className="step4Button" onClick={test}>tst</button>
+                        <div className="errorMessage errorStep4">{validate()} </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </>
-
     );
 };
 

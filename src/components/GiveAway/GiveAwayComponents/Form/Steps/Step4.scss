@@ -44,27 +44,34 @@
             :nth-child(1) {
               align-self: start;
             }
+
             textarea {
               height: 12rem;
               width: 33rem;
               background-color: #E8E9E4;
               @include border(0.75px, $fontColor, 0);
-              &:focus  {
+
+              &:focus {
                 background-color: white;
               }
             }
           }
-
         }
       }
     }
   }
 
-  .step4Button {
-    margin-top: 11.6rem;
+  .formFooter {
 
-    button {
+    .errorStep4 {
+      margin: 8% 0 0 0;
+
+    }
+
+    .step4Button {
+      margin-top: 19.2rem;
       margin-right: 5rem;
+
     }
   }
 }
