@@ -8,7 +8,7 @@ import Summary from "./Steps/Summary";
 import ThankYou from "./Steps/ThankYou";
 
 const GiveAwayForm = () => {
-    const [viewNumber, setViewNumber] = useState(4);
+    const [viewNumber, setViewNumber] = useState(1);
     const [isError, setIsError] = useState(false);
     const [thingToGive, setThingToGive] = useState("");
     const [bagsNumber, setBagsNumber] = useState("");

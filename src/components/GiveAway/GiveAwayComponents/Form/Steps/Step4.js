@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import './Steps.scss'
 import './Step4.scss'
 import GiveAwayInfo from "../../GiveAwayInfo/GiveAwayInfo";
-import Step1 from "./Step1";
-import Step2 from "./Step2";
 
 const Step4 = (props) => {
     const [city, setCity] = useState("");
@@ -41,13 +39,7 @@ const Step4 = (props) => {
         }));
     }
 
-    const handleOnClick = () => {
-        props.counterNext();
-        // const isValid = validate();
-        handleSetInfo(props.addressData);
-    }
-
-    const isValidate = () => {
+    const errorMessage = () => {
         let result = [];
         Object.keys(errorInfo).forEach(function (key) {
             if (errorInfo[key] !== "") {
@@ -57,9 +49,7 @@ const Step4 = (props) => {
         return result
     }
 
-    const validate = (e) => {
-        e.preventDefault();
-
+    const validate = () => {
         let streetError = "";
         let cityError = "";
         let postCodeError = "";
@@ -67,51 +57,39 @@ const Step4 = (props) => {
         let dataError = "";
         let timeError = "";
 
-        if (street.includes("")) {
-            streetError = "uzupelnij Ulice"
+        if (street === "") {
+            streetError = "uzupelnij ulice"
         }
-        if (city.includes("")) {
-            cityError = "uzupelnij Miasto"
+        if (city === "") {
+            cityError = "uzupelnij miasto"
         }
-        if (postCode.includes("")) {
+        if (postCode === "") {
             postCodeError = "uzupelnij kod pocztowy"
         }
-        if (phoneNumber.includes("")) {
+        if (phoneNumber === "") {
             phoneNumberError = "uzupelnij numer telefonu"
         }
-        if (data.includes("")) {
+        if (data === "") {
             dataError = "uzupelnij date"
         }
-        if (time.includes("")) {
-            timeError = "uzupelnij Godzinę"
+        if (time === "") {
+            timeError = "uzupelnij godzinę"
         }
-        if (streetError || cityError) {
+        if (streetError || cityError || postCodeError || phoneNumberError || dataError || timeError) {
             setErrorInfo({...errorInfo, streetError, cityError, postCodeError, phoneNumberError, dataError, timeError})
             return false
         }
         return true
     }
 
-    // onChange={(e => props.setAddress({
-    //     ...props.addressData,
-    //     address: {postCode: e.target.value}
-    // }))}  to dziła ale zmienia tylko jeden element
-
-    // const handleTest = (e) => {
-    //     props.setAddress(prevState => ({
-    //         address: {
-    //             ...prevState.address,
-    //             city: "to działa na sztywno"
-    //         }
-    //     }))
-    // }  to działa na sztywno
-
-    // this.setState(prevState => ({
-    //     jasper: {                   // object that we want to update
-    //         ...prevState.jasper,    // keep all other key-value pairs
-    //         name: 'something'       // update the value of specific key
-    //     }
-    // }))
+    const handleOnClick = (e) => {
+        e.preventDefault();
+        validate();
+        if (validate() === true) {
+            props.counterNext();
+            handleSetInfo(props.addressData);
+        }
+    }
 
     return (
         <>
@@ -189,8 +167,7 @@ const Step4 = (props) => {
                     <div className="formFooter">
                         <button className="step4Button" onClick={props.counterPrev}>Wstecz</button>
                         <button className="step4Button" onClick={handleOnClick}>Dalej</button>
-                        <button className="step4Button" onClick={validate}>test</button>
-                        <div className="errorMessage errorStep4">{isValidate()} </div>
+                        <div className="errorMessage errorStep4">{errorMessage()} </div>
                     </div>
                 </div>
             </form>
