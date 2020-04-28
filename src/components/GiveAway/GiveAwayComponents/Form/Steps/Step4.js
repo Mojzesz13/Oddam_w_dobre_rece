@@ -63,7 +63,7 @@ const Step4 = (props) => {
         if (city === "") {
             cityError = "uzupelnij miasto"
         }
-        if (postCode === "") {
+        if (postCode === "" && !postCode.includes("-")) {
             postCodeError = "uzupelnij kod pocztowy"
         }
         if (phoneNumber === "") {
@@ -121,7 +121,7 @@ const Step4 = (props) => {
                                     </div>
                                     <div className="inputHolder">
                                         <label htmlFor="postCode">Kod pocztowy</label>
-                                        <input type="number"
+                                        <input type="text"
                                                name="postCode"
                                                onChange={(e) => setPostCode(e.target.value)}
                                         />

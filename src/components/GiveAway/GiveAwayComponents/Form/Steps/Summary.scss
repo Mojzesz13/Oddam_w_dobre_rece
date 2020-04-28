@@ -55,7 +55,6 @@
         width: 30rem;
         margin-left: 35%;
 
-
         li {
           width: 30rem;
 
@@ -78,8 +77,12 @@
       width: 5rem;
     }
 
-    button {
-      margin: 8rem 5rem 0 0;
+    .formFooter {
+      margin-top: 5.2rem;
+
+      button {
+        margin: 1rem 5rem 0 0;
+      }
     }
   }
 }

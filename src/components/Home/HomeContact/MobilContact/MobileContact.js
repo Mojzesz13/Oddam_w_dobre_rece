@@ -6,8 +6,11 @@ import PhoneIcon from '../../../../assets/phone.png';
 import MailIcon from '../../../../assets/mail.png';
 
 const MobileContact = () => {
-    const [loginStatus, setLoginStatus] = useState("flex");
-    const [logoutStatus, setLogoutStatus] = useState("none");
+    const [loginStatus] = useState("flex");
+    const [logoutStatus] = useState("none");
+
+    // const [loginStatus, setLoginStatus] = useState("flex");    FOR LOG OUT UPGRADE
+    // const [logoutStatus, setLogoutStatus] = useState("none");
 
     return (
         <div className="mobileContact" id="contact">
@@ -28,7 +31,6 @@ const MobileContact = () => {
                 <div className="buttonsContainer">
                     <button>Załóż konto</button>
                 </div>
-
             </div>
             <div className="contactContainer">
                 <div className="contactTitle">

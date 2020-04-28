@@ -33,7 +33,7 @@ const GiveAwayForm = () => {
         }
     )
 
-    // const [finalUpdate, setFinalUpdate] = useState(
+    // const [finalUpdate, setFinalUpdate] = useState(      // TEST VERSION
     //     {
     //         viewNumber: 2,
     //         stuffDescriptions: {
@@ -92,7 +92,6 @@ const GiveAwayForm = () => {
         }
     }
 
-
     switch (viewNumber) {
         case 1:
             return <Step1 view={viewNumber}
@@ -101,8 +100,6 @@ const GiveAwayForm = () => {
                           setThing={setThingToGive}
                           isError={isError}
                           handlerNextPage={handleNextPage}
-
-
             />;
         case 2:
             return <Step2 counterPrev={handlePrevView}

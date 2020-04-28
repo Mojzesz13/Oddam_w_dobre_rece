@@ -29,6 +29,28 @@ const Summary = (props) => {
         }
     };
 
+   // const handleSummary = (e, summaryUser) => {
+   //      e.preventDefault();
+   //
+   //      fetch("https://oddam-w-dobre-rece-1c38c.firebaseio.com/summary.json", {
+   //          method: "POST",
+   //          body: JSON.stringify(summaryUser),
+   //          headers: {
+   //              "Content-Type": "application/json"
+   //          }
+   //      })
+   //          .then(response => {
+   //              if (response.ok) {
+   //                  return response.json()
+   //              } else {
+   //                  throw new Error('Błąd sieci!')
+   //              }
+   //          })
+   //          .catch(error => {
+   //              console.log(error);
+   //          });
+   //  };
+
     return (
         <div className="formContainer">
             <form id="summaryForm">
@@ -45,23 +67,6 @@ const Summary = (props) => {
                     </div>
                 </div>
                 <div className="infoSummary">
-                    {/*<table>*/}
-                    {/*<tr>*/}
-                    {/*    <th>Adres odbioru:</th>*/}
-                    {/*    <th>Termin odbioru:</th>*/}
-                    {/*</tr>*/}
-                    {/*<tr>*/}
-                    {/*    <td><label>Ulica</label>{props.address.address.street}</td>*/}
-                    {/*    <td><label>Adres</label>{props.address.address.city}</td>*/}
-                    {/*    <td><label>Kod pocztowy</label>{props.address.address.postCode}</td>*/}
-                    {/*    <td><label>Numer Teleony</label>{props.address.address.phoneNumber}</td>*/}
-                    {/*</tr>*/}
-                    {/*<tr>*/}
-                    {/*    <td><label>Data</label>{props.address.address.street}</td>*/}
-                    {/*    <td><label>Godzina</label>{props.address.address.city}</td>*/}
-                    {/*    <td><label>uwagi dla kuriera</label>{props.address.address.postCode}</td>*/}
-                    {/*</tr>*/}
-                    {/*</table>*/}
                     <div className="addressSummary">
                         <h2>Adres odbioru:</h2>
                         <li><label>Ulica</label>{summaryUser.street}</li>
@@ -73,11 +78,19 @@ const Summary = (props) => {
                         <h2>Termin odbioru:</h2>
                         <li><label>Data</label>{summaryUser.data}</li>
                         <li><label>Godzina</label>{summaryUser.time}</li>
-                        <li><label>Uwagi dla kuriera</label><textarea>{summaryUser.comments}</textarea></li>
+                        <li><label>Uwagi dla kuriera</label>
+                            <textarea name="comments"
+                                      placeholder={summaryUser.comments}
+                            /></li>
                     </div>
                 </div>
+                <div className="formFooter">
                 <button onClick={props.counterPrev}>Wstecz</button>
-                <button onClick={props.counterNext}>Potwierdzam</button>
+                <button type="submit"
+                        onClick={props.counterNext}
+                        // onClick={(e) => handleSummary(e, summaryUser)} still in progress
+                >Potwierdzam</button>
+                </div>
             </form>
         </div>
     );
