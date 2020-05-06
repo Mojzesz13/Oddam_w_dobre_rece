@@ -117,7 +117,6 @@ const GiveAwayForm = () => {
                           localization={localization}
                           setLocalization={setLocalization}
                           isError={isError}
-
             />;
         case 4:
             return <Step4 counterNext={handleNextView}

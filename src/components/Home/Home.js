@@ -9,7 +9,7 @@ import HomeContact from './HomeContact/HomeContact';
 
     const Home = () => {
         return (
-            <div className="homeContainer">
+            <div className="homeContainer" id="main">
               <HomeHeader/>
               <HomeThreeColumns/>
               <HomeInstruction/>

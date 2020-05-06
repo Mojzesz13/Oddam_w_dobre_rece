@@ -8,8 +8,8 @@
   flex-direction: row;
   margin-top: 2.6rem;
 
-
   a {
+    text-decoration: none;
     font-size: 1.8rem;
     color: $fontColor;
     font-family: $font-base;
@@ -30,6 +30,10 @@
     flex-direction: column;
     align-items: center;
     padding: 0;
+
+    a {
+      border-bottom: 1px dashed $fontColor;
+    }
   }
 }
 

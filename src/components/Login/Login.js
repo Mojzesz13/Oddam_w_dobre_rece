@@ -46,7 +46,7 @@ const Login = () => {
                     <h1>Zaloguj się</h1>
                     <img src={titleImg} alt="decorationBar"/>
                 </div>
-                {errorNotification}
+                {/*{errorNotification}   firebase error */}
                 <form className="formTitle"
                       onSubmit={handleSubmit}>
                     <div className="inputsContainer">
@@ -56,6 +56,7 @@ const Login = () => {
                                    value={email}
                                    name="email"
                                    style={borderStyle}
+                                   required
                                    onChange={(e) => setEmail(e.target.value)}
                             />
                             <span>{emailError}</span>
@@ -66,6 +67,7 @@ const Login = () => {
                                    value={passwordOne}
                                    name="password"
                                    style={borderStyle}
+                                   required
                                    onChange={(e) => setPasswordOne(e.target.value)}
                             />
                             <span>{passwordOneError}</span>
@@ -73,7 +75,7 @@ const Login = () => {
                     </div>
                     <div className="buttonsContainer">
                         <NavLink className="loginBtn" to="/registration">Załóż konto</NavLink>
-                        <input className="loginBtn" type="submit" onClick={login} value="Zaloguj Się"/>
+                        <input className="loginBtn" type="submit" onClick={login} value="Zaloguj się"/>
                     </div>
                 </form>
             </div>

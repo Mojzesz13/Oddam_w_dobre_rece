@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './SideDrawer.scss'
+import NavList from "./NavList";
 
 const SideDrawer = (props) => {
     let drawerClass = "sideDrawer";
@@ -13,6 +14,7 @@ const SideDrawer = (props) => {
                 <NavLink className="loginHolder" to="/login">Zaloguj</NavLink>
                 <NavLink className="loginHolder" to="/registration">Załóż konto</NavLink>
             </div>
+            <NavList/>
         </div>
     );
 };

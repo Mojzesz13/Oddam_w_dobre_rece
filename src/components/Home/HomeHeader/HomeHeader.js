@@ -7,7 +7,7 @@ import Navigation from '../Navigation/Navigation';
 const HomeHeader = () => {
 
     return (
-        <div className="headerContainer" id="main">
+        <div className="headerContainer">
             <Navigation/>
             <div className="textContent">
                 <div className="title">

@@ -18,8 +18,13 @@ const Registration = () => {
     const emailRequirements = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let borderStyle = {borderBottom: `1px solid ${color}`};
 
-    const handleSubmit = (e) => {
+    const handleRegistration = e => {
         e.preventDefault();
+        if (passwordTwo !== passwordOne) {
+            setPasswordTwoError("Hasła muszą być takie same");
+            setColor("red");
+            return null;
+        }
         if (!emailRequirements.test(email)) {
             setEmailError("Podany email jest nieprawidłowy");
             setColor("red");
@@ -27,19 +32,12 @@ const Registration = () => {
         if (passwordOne.length < 6) {
             setPasswordOneError("Hasło musi mieć co najmniej 6 znaków");
             setColor("red");
+        } else {
+            fire.auth().createUserWithEmailAndPassword(email, passwordOne)
+                .catch((error) => {
+                    setFireErrors(error.message)
+                });
         }
-        if (passwordTwo !== passwordOne) {
-            setPasswordTwoError("Hasła muszą być takie same");
-            setColor("red");
-        }
-    };
-
-    const registration = e => {
-        e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(email, passwordOne)
-            .catch((error) => {
-                setFireErrors(error.message)
-            });
     };
 
     let errorNotification = fireErrors ?
@@ -55,7 +53,7 @@ const Registration = () => {
                 </div>
                 {errorNotification}
                 <form className="formTitle"
-                      onSubmit={handleSubmit}>
+                >
                     <div className="inputsContainer">
                         <div className="inputHolder">
                             <label>Email</label>
@@ -63,6 +61,7 @@ const Registration = () => {
                                    value={email}
                                    name="email"
                                    style={borderStyle}
+                                   required
                                    onChange={(e) => setEmail(e.target.value)}
                             />
                             <span>{emailError}</span>
@@ -73,6 +72,7 @@ const Registration = () => {
                                    value={passwordOne}
                                    name="password"
                                    style={borderStyle}
+                                   required
                                    onChange={(e) => setPasswordOne(e.target.value)}
                             />
                             <span>{passwordOneError}</span>
@@ -83,6 +83,7 @@ const Registration = () => {
                                    value={passwordTwo}
                                    name="password"
                                    style={borderStyle}
+                                   required
                                    onChange={(e) => setPasswordTwo(e.target.value)}
                             />
                             <span>{passwordTwoError}</span>
@@ -90,7 +91,7 @@ const Registration = () => {
                     </div>
                     <div className="buttonsContainer">
                         <NavLink className="loginBtn" to="/login">Zaloguj</NavLink>
-                        <input className="loginBtn" type="submit" onClick={registration} value="Załóż konto"/>
+                        <input className="loginBtn" type="submit" onClick={handleRegistration} value="Załóż konto"/>
                     </div>
                 </form>
             </div>

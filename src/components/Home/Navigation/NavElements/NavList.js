@@ -1,17 +1,12 @@
 import React from 'react';
 import {Link} from 'react-scroll';
 import './NavList.scss';
+import {NavLink} from "react-router-dom";
 
 const NavList = () => {
     return (
             <nav className="headerLinks">
-                <Link
-                    activeClass="active"
-                    to="main"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                >Start</Link>
+                <NavLink to="/">Start</NavLink>
                 <Link
                     activeClass="active"
                     to="instruction"

@@ -35,12 +35,15 @@ const HomeLogin = (props) => {
     return (
         <div className="headerLogin">
             <div className="imgHolder"><img src={Logo} alt="Logo"/></div>
-            <div className="userHolder" style={{display: logInStatus}}>Cześć {userEmail}!</div>
-            <NavLink className="loginHolder" to="/giveBackStuff" style={{display: logInStatus}}>Oddaj rzeczy</NavLink>
-            <NavLink className="loginHolder" to="/logout" style={{display: logInStatus}}
-                     onClick={logout}>Wyloguj</NavLink>
-            <NavLink className="loginHolder" to="/login" style={{display: logOutStatus}}>Zaloguj</NavLink>
-            <NavLink className="loginHolder" to="/registration" style={{display: logOutStatus}}>Załóż konto</NavLink>
+            <div className="linksHolder">
+                <div className="userHolder" style={{display: logInStatus}}>Cześć {userEmail}!</div>
+                <NavLink className="loginHolder" to="/giveAway" style={{display: logInStatus}}>Oddaj rzeczy</NavLink>
+                <NavLink className="loginHolder" to="/logout" style={{display: logInStatus}}
+                         onClick={logout}>Wyloguj</NavLink>
+                <NavLink className="loginHolder" to="/login" style={{display: logOutStatus}}>Zaloguj</NavLink>
+                <NavLink className="loginHolder" to="/registration" style={{display: logOutStatus}}>Załóż
+                    konto</NavLink>
+            </div>
             <DrawerToggleButton click={props.drawerClickHandler}/>
         </div>
     );

@@ -10,21 +10,26 @@
   justify-content: flex-end;
   font-size: 1.4rem;
 
-  .userHolder {
-    margin-left: 3rem;
-    padding: 1.1rem;
-  }
+  .linksHolder {
+    display: flex;
+    flex-direction: row;
 
-  a {
-    margin-left: 3rem;
-    padding: 1.1rem;
-    text-decoration: none;
-    color: $secondFontColor;
+    .userHolder {
+      margin-left: 3rem;
+      padding: 1.1rem;
+    }
 
-    &:hover {
-      border: 1px solid $decorationColor;
-      padding: 1rem;
-      color: black;
+    a {
+      margin-left: 3rem;
+      padding: 1.1rem;
+      text-decoration: none;
+      color: $secondFontColor;
+
+      &:hover {
+        border: 1px solid $decorationColor;
+        padding: 1rem;
+        color: black;
+      }
     }
   }
 
@@ -48,7 +53,7 @@
     margin-top: 0.5rem;
     justify-content: space-between;
 
-    .loginHolder {
+    .test {
       display: none;
     }
   }
@@ -59,8 +64,7 @@
     margin-top: 0.5rem;
     justify-content: space-between;
 
-
-    .loginHolder {
+    .test {
       display: none;
     }
   }
