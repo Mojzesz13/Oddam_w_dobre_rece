@@ -14,6 +14,7 @@ const Registration = () => {
     const [passwordOneError, setPasswordOneError] = useState("");
     const [passwordTwoError, setPasswordTwoError] = useState("");
     const [color, setColor] = useState("#707070");
+    const [successMessage, setSuccessMessage] = useState("")
 
     const emailRequirements = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let borderStyle = {borderBottom: `1px solid ${color}`};
@@ -34,6 +35,16 @@ const Registration = () => {
             setColor("red");
         } else {
             fire.auth().createUserWithEmailAndPassword(email, passwordOne)
+                .then(() => {
+                    setEmail("");
+                    setPasswordOne("");
+                    setPasswordTwo("");
+                    setSuccessMessage("Konto zostało założone")
+                    setEmailError("");
+                    setPasswordOneError("");
+                    setPasswordTwoError("");
+                    setColor("#707070");
+                })
                 .catch((error) => {
                     setFireErrors(error.message)
                 });
@@ -52,6 +63,7 @@ const Registration = () => {
                     <img src={titleImg} alt="decorationBar"/>
                 </div>
                 {errorNotification}
+                <h2 style={{color: "green"}}>{successMessage} </h2>
                 <form className="formTitle"
                 >
                     <div className="inputsContainer">
@@ -61,7 +73,6 @@ const Registration = () => {
                                    value={email}
                                    name="email"
                                    style={borderStyle}
-                                   required
                                    onChange={(e) => setEmail(e.target.value)}
                             />
                             <span>{emailError}</span>
@@ -72,7 +83,6 @@ const Registration = () => {
                                    value={passwordOne}
                                    name="password"
                                    style={borderStyle}
-                                   required
                                    onChange={(e) => setPasswordOne(e.target.value)}
                             />
                             <span>{passwordOneError}</span>
@@ -83,7 +93,6 @@ const Registration = () => {
                                    value={passwordTwo}
                                    name="password"
                                    style={borderStyle}
-                                   required
                                    onChange={(e) => setPasswordTwo(e.target.value)}
                             />
                             <span>{passwordTwoError}</span>

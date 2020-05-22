@@ -132,15 +132,8 @@ const initialState = {
     message: "",
 }
 
-const initialError = {
-    nameE: "",
-    emailE: "",
-    messageE: "",
-}
-
 const DesktopContact = () => {
     const [data, setData] = useState(initialState);
-    const [errors, setErorrs] = useState(initialError);
     const [errorName, setErrorName] = useState("");
     const [errorEmail, setErrorEmail] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
@@ -207,6 +200,10 @@ const DesktopContact = () => {
                     message: initialState.message,
 
                 });
+                setErrorName("");
+                setErrorEmail("");
+                setErrorMessage("");
+                setColor("#707070");
             })
             .catch(err => {
                 console.error("Wystąpił bład " + err.massage)
@@ -237,7 +234,6 @@ const DesktopContact = () => {
                         <input type="text"
                                name="name"
                                value={data.name}
-                               required={true}
                                style={borderStyle}
                                placeholder="Krzysztof"
                                onChange={handleInputChange}
@@ -249,7 +245,6 @@ const DesktopContact = () => {
                         <input type="text"
                                name="email"
                                value={data.email}
-                               required={true}
                                style={borderStyle}
                                placeholder="abc@xyz.pl"
                                onChange={handleInputChange}
