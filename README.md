@@ -34,8 +34,4 @@ The application consists of a responsive landing page with features like paginat
 * for start simply type `npm start` to run application,
 * to see app go to localhost:3000
  
-##Demo
---------------
 
-Go to YouTube to see demo movie:  https://youtu.be/JF3Xg42MWNo
-you can also visit this link LINK DO DEMO 
