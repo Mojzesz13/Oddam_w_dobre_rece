@@ -33,5 +33,8 @@ How to run it
 * next install modules by typing `npm install`,
 * for start simply type `npm start` to run application,
 * to see app go to localhost:3000
- 
 
+Demo
+--------------
+Go to YouTube to see demo movie: https://youtu.be/ZtkzeMnpxV8
+ 
