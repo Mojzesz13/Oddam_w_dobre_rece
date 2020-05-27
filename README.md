@@ -24,7 +24,6 @@ Technologies
 * Webpack
 * Firebase
 * RWD
-* also libraries like:
     
 How to run it
 --------------
