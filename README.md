@@ -28,7 +28,6 @@ Technologies
   * react-router
   * react-scroll
   * fetch
-    
 
 DEMO
 --------------
