@@ -25,16 +25,12 @@ Technologies
 * Firebase
 * RWD
 * also:
-       * react-router
-       * react-scroll
-       * fetch
+  * react-router
+  * react-scroll
+  * fetch
     
-How to run it
---------------
-* for start you need to create new environment by Create React App,
-* next you neet to clone this repo by typing `git clone`,
-* next install modules by typing `npm install`,
-* for start simply type `npm start` to run application,
-* to see app go to localhost:3000
 
+DEMO
+--------------
  
+[Oddam w dobre ręce](https://mojzesz13.github.io/Oddam_w_dobre_rece/#/)
