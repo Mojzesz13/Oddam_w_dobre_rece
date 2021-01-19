@@ -25,8 +25,8 @@ Technologies
 * Firebase
 * RWD
 * also:
-       *react-router
-       *react-scroll
+       * react-router
+       * react-scroll
        * fetch
     
 How to run it
